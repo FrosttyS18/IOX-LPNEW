@@ -21,3 +21,16 @@ test('published markup follows the revised Figma copy and preserves form options
   for (const [, target] of html.matchAll(/href="#([^"]+)"/g)) assert.ok(html.includes(`id="${target}"`), `Missing anchor: ${target}`);
   assert.equal((html.match(/class="essentials-row"/g) || []).length, 4);
 });
+
+test('HTML and module imports share a version so cached older styles cannot mix with new markup', async () => {
+  const html = await readFile(new URL('../dist/index.html', import.meta.url), 'utf8');
+  const versions = [...html.matchAll(/(?:href|src)="\/(?:styles\.css|performance\.css|main\.mjs)\?v=([a-f0-9]{12})"/g)].map(match => match[1]);
+  assert.equal(versions.length, 3);
+  assert.equal(new Set(versions).size, 1);
+  for (const file of ['main.mjs','performance.mjs']) {
+    const module = await readFile(new URL(`../dist/${file}`, import.meta.url), 'utf8');
+    const imports = [...module.matchAll(/(?:from\s*|import\s*\()['"]\.\/[^'"]+\.mjs\?v=([a-f0-9]{12})['"]/g)];
+    assert.ok(imports.length > 0);
+    for (const match of imports) assert.equal(match[1], versions[0]);
+  }
+});
