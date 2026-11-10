@@ -75,16 +75,16 @@ export function renderPage(source, assets, legal, approved) {
     </section>
 
     <section class="metrics container" aria-labelledby="metrics-title">
-      <h2 id="metrics-title" class="section-title">${escape(approved.metricTitle)}</h2>
+      <h2 id="metrics-title" class="section-title">${mobilePhrases(escape(approved.metricTitle), ['mês após mês.'])}</h2>
       <div class="metrics-mosaic">
         <div class="metric metric-positive">
           ${image(assets.metricsGlass, '', 'metric-glass', 780, 674)}
           <p class="metric-value"><span class="metric-gold">159%</span> do CDI</p><p class="metric-label">${escape(approved.metricPositivePeriod)}</p>
-          <a class="button metrics-cta" href="#formulario">${escape(top.cta)}</a>
         </div>
         <div class="metric metric-twelve"><p class="metric-value">${escape(approved.metricAnnualValue)}</p><p class="metric-period">${escape(approved.metricAnnualPeriod)}</p><p class="metric-comparison">${escape(approved.metricAnnualComparison)}</p></div>
         <div class="metric metric-volatility"><p class="metric-value" data-counter="0.48" data-decimals="2" data-prefix="" data-suffix="%"><span class="counter-visual" aria-hidden="true">0,48%</span><span class="visually-hidden">0,48%</span></p><p class="metric-label">de volatilidade anualizada</p></div>
         <div class="metric metric-consistency"><p class="metric-value">${escape(approved.metricConsistency)}</p><p class="metrics-note">${escape(approved.metricNote)}</p></div>
+        <a class="button metrics-cta" href="#formulario">${escape(top.cta)}</a>
       </div>
     </section>
 
