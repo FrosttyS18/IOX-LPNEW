@@ -1,0 +1,9 @@
+dist/
+output/
+.playwright-cli/
+node_modules/
+docs/superpowers/
+dev-assets.json
+.env
+.env.*
+!.env.example

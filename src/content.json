@@ -1,0 +1,787 @@
+{
+  "id": "LP_A",
+  "sourceName": "LP A · Acesso restrito (P1)",
+  "purposeSource": "A LP A recebe o tráfego de captação.",
+  "sourcePages": [
+    24,
+    25,
+    26,
+    28
+  ],
+  "additionalCrossCheckPage": 27,
+  "sourceFile": "C:/iox/work/linha-criativa-2026-11-10/fonte-paginas.json",
+  "sourcePdf": "C:/iox/outputs/linha-criativa-2026-11-09/fonte/IOX90_Linha_criativa_e_variacoes.pdf",
+  "scope": "Preparação integral de copy e mapa visual. Nenhuma implementaçãoFigma/código/UI, nenhuma alteração de75frames, integrações ou páginas ao vivo.",
+  "copyPolicy": "Textos doLéo preservados integralmente, normalizando sóquebras de linha. copy eheroes são fonte; visualMap eobservações são propostas, não novos textos da página.",
+  "sharedBodyRuleSource": "O topo da LP A muda conforme a hipótese do anúncio, para a pessoa encontrar na página a mesma frase que a fez clicar. O resto da página é igual para todas. A versão é escolhida pelo utm_content.",
+  "utm": {
+    "parameter": "utm_content",
+    "sourcePage": 24,
+    "selects": "Uma das cinco variantes de título/subtítuloH1–H5;corpo ecopycomum permanecem únicos.",
+    "fallbackSourceLabel": "Padrão (sem utm)",
+    "fallbackVariantId": "fallback",
+    "mappingStatus": "Indicação funcional dafonte, sem código/roteamento implementado. Vincular o nome doanúncio à hipótese correspondente sem inventar novo texto.",
+    "unknownValueStatus": "Não especificado; pendência registrada."
+  },
+  "sections": [
+    {
+      "id": "topo",
+      "order": 1,
+      "sourceLabel": "Topo",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "copy": {
+        "titleAndSubtitleVariants": [
+          {
+            "id": "H1",
+            "title": "Este fundo não aceita qualquer investidor.",
+            "subtitle": "O Fundo IOX 90 é restrito a investidores qualificados e fechou no positivo todos os meses desde agosto de 2023. Veja se você se qualifica.",
+            "sourcePage": 24
+          },
+          {
+            "id": "H2",
+            "title": "Juntar foi a parte difícil. Agora a conversa é outra.",
+            "subtitle": "Diversifique com o Fundo IOX 90, do Grupo IOX, positivo todos os meses desde agosto de 2023.",
+            "sourcePage": 24
+          },
+          {
+            "id": "H3",
+            "title": "Seu patrimônio também pode construir.",
+            "subtitle": "O Fundo IOX 90 antecipa recebíveis de empresas que estão produzindo. Positivo todos os meses desde agosto de 2023.",
+            "sourcePage": 24
+          },
+          {
+            "id": "H4",
+            "title": "22 anos. R$ 3,8 bilhões. Agora você conhece o Grupo IOX.",
+            "subtitle": "E o Fundo IOX 90, para investidores qualificados, positivo todos os meses desde agosto de 2023.",
+            "sourcePage": 24
+          },
+          {
+            "id": "H5",
+            "title": "O investimento mais sem graça da sua carteira.",
+            "subtitle": "Positivo todos os meses desde agosto de 2023, com volatilidade anualizada de 0,48%. Para quem prefere constância.",
+            "sourcePage": 24
+          },
+          {
+            "id": "fallback",
+            "sourceLabel": "Padrão (sem utm)",
+            "title": "Para quem já construiu patrimônio.",
+            "subtitle": "O Fundo IOX 90 é restrito a investidores qualificados e fechou no positivo todos os meses desde agosto de 2023.",
+            "sourcePage": 24
+          }
+        ],
+        "qualificationLine": "Exclusivo para investidores qualificados (mais de R$ 1 milhão em aplicações financeiras).",
+        "cta": "Quero falar com um especialista.",
+        "disclaimer": "Rentabilidade passada não é garantia de rentabilidade futura."
+      },
+      "sourceBehavior": "Ele rola a página até o formulário."
+    },
+    {
+      "id": "numeros",
+      "order": 2,
+      "sourceLabel": "Os números",
+      "sourcePages": [
+        25
+      ],
+      "copy": {
+        "items": [
+          "Todos os meses no positivo desde agosto de 2023",
+          "0,48% de volatilidade anualizada",
+          "22 anos do Grupo IOX no mercado de crédito",
+          "R$ 3,8 bilhões de patrimônio líquido no Grupo IOX"
+        ],
+        "note": "Dados do Fundo IOX 90 conforme a lâmina de setembro de 2026. Rentabilidade passada não é garantia de rentabilidade futura."
+      }
+    },
+    {
+      "id": "para-quem-e",
+      "order": 3,
+      "sourceLabel": "Para quem é",
+      "sourcePages": [
+        25
+      ],
+      "copy": {
+        "title": "Um fundo feito para quem já investe.",
+        "text": "O Fundo IOX 90 é destinado a investidores qualificados, ou seja, pessoas com mais de R$ 1 milhão em aplicações financeiras. É para quem já tem reserva e renda fixa e quer diversificar com crédito, usando uma parte do patrimônio que pode ficar 90 dias sem resgate."
+      }
+    },
+    {
+      "id": "como-funciona",
+      "order": 4,
+      "sourceLabel": "Como funciona",
+      "sourcePages": [
+        25
+      ],
+      "copy": {
+        "title": "Do primeiro contato ao primeiro aporte.",
+        "steps": [
+          {
+            "label": "Converse",
+            "text": "um especialista do Grupo IOX explica o fundo, o prazo e os riscos."
+          },
+          {
+            "label": "Abra sua conta",
+            "text": "a abertura é feita na QI Tech, e o especialista acompanha cada etapa."
+          },
+          {
+            "label": "Invista",
+            "text": "você faz o primeiro aporte e, depois, pode aportar o valor que quiser, quando quiser."
+          }
+        ]
+      }
+    },
+    {
+      "id": "essencial",
+      "order": 5,
+      "sourceLabel": "O essencial do fundo",
+      "sourcePages": [
+        25
+      ],
+      "copy": {
+        "items": [
+          {
+            "label": "Resgate",
+            "text": "em 90 dias após o pedido."
+          },
+          {
+            "label": "Taxas",
+            "text": "taxa fixa de R$ 8 mil por mês, que já inclui administração e gestão. Sem taxa de performance."
+          },
+          {
+            "label": "Imposto",
+            "text": "IR de 15% sobre o lucro, retido só no resgate."
+          },
+          {
+            "label": "Quem cuida",
+            "text": "gestão da Tercon Asset, administração e custódia da QI Tech."
+          },
+          {
+            "label": "Carteira",
+            "text": "antecipação de recebíveis de empresas, com prazos curtos e pulverizada entre quem vende e quem paga."
+          }
+        ]
+      }
+    },
+    {
+      "id": "especialistas",
+      "order": 6,
+      "sourceLabel": "Especialistas",
+      "sourcePages": [
+        25,
+        26
+      ],
+      "copy": {
+        "title": "Quem vai conversar com você.",
+        "text": "Antes de qualquer decisão, você fala com uma pessoa. Nossos especialistas explicam o fundo com calma e respondem todas as suas dúvidas.",
+        "names": [
+          "Hélio",
+          "Renan",
+          "Vitor",
+          "Vivian"
+        ]
+      },
+      "sourceAssetInstruction": "Foto e nome de Hélio, Renan, Vitor e Vivian."
+    },
+    {
+      "id": "formulario",
+      "order": 7,
+      "sourceLabel": "Formulário",
+      "sourcePages": [
+        26,
+        28
+      ],
+      "copy": {
+        "title": "Fale com um especialista.",
+        "text": "Responda 4 perguntas rápidas para o especialista preparar a sua conversa.",
+        "fields": [
+          {
+            "id": "name",
+            "order": 1,
+            "label": "Nome",
+            "sourcePage": 28,
+            "category": "contato"
+          },
+          {
+            "id": "email",
+            "order": 2,
+            "label": "E-mail",
+            "sourcePage": 28,
+            "category": "contato"
+          },
+          {
+            "id": "phone",
+            "order": 3,
+            "label": "Celular (WhatsApp)",
+            "sourcePage": 28,
+            "category": "contato"
+          },
+          {
+            "id": "invested",
+            "order": 4,
+            "label": "Quanto você tem investido hoje?",
+            "options": [
+              "Até R$ 300 mil",
+              "De R$ 300 mil a R$ 1 milhão",
+              "De R$ 1 milhão a R$ 5 milhões",
+              "Acima de R$ 5 milhões"
+            ],
+            "sourcePage": 28,
+            "category": "qualificacao"
+          },
+          {
+            "id": "currentInvestments",
+            "order": 5,
+            "label": "Onde você já investe?",
+            "options": [
+              "Renda Fixa",
+              "Renda Variável",
+              "Crédito Estruturado",
+              "Imóveis",
+              "Criptos",
+              "Ainda não invisto"
+            ],
+            "sourcePage": 28,
+            "category": "qualificacao"
+          },
+          {
+            "id": "timing",
+            "order": 6,
+            "label": "Pretende investir nos próximos 30 dias?",
+            "options": [
+              "Sim",
+              "Estou avaliando"
+            ],
+            "sourcePage": 28,
+            "category": "qualificacao"
+          },
+          {
+            "id": "preferredTime",
+            "order": 7,
+            "label": "Qual o melhor horário para falarmos?",
+            "options": [
+              "Manhã",
+              "Tarde",
+              "Noite"
+            ],
+            "sourcePage": 28,
+            "category": "qualificacao"
+          }
+        ],
+        "cta": "Quero minha conversa.",
+        "consent": "Ao enviar, você concorda com a Política de Privacidade e em receber contato do Grupo IOX."
+      },
+      "sourceCrossReference": "As perguntas estão na seção de formulários, abaixo."
+    },
+    {
+      "id": "rodape",
+      "order": 8,
+      "sourceLabel": "Rodapé",
+      "sourcePages": [
+        26
+      ],
+      "copy": {
+        "fundDisclaimer": "A rentabilidade obtida no passado não representa garantia de rentabilidade futura. O IOX 90 FICFIDC não conta com garantia do gestor da carteira, do administrador, ou de qualquer outro mecanismo, inclusive de seguro de crédito ou, ainda, do fundo garantidor de créditos (FGC). Não há garantia completa contra a possibilidade de perdas para o fundo de investimento e para o investidor. É recomendada a leitura cuidadosa do prospecto e do regulamento do fundo antes de aplicar."
+      },
+      "pendingLegalExtension": {
+        "sourceInstruction": "Mais o texto legal da LP de CDI, com o nome do fundo conferido.",
+        "text": null,
+        "status": "Pendente: complemento não transcrito nas páginas24–28; recuperar fonte existente, conferir nome e validar antes de publicar."
+      }
+    }
+  ],
+  "visualMap": [
+    {
+      "sectionId": "topo",
+      "direction": "Seção aberta escura, H1 em Plus Jakarta Sans SemiBold com largura de leitura controlada e sem títulos extras. Subtítulo Regular com todas as frases. Qualificação como linha editorial discreta, preservando seu texto integral sem pílula. Um CTA primário. Aviso do topo junto à área do CTA, legível.",
+      "hypothesisVariants": {
+        "H1": "Lâminas ou porta arquitetônica IOX na direita; copy à esquerda com leitura tranquila.",
+        "H2": "Arquitetura e ambiente de patrimônio/rotina como contexto, sem repetir fotografia genérica de rosto.",
+        "H3": "Operação real em arquitetura silver, sem substituir texto por números não fornecidos.",
+        "H4": "Tipografia/números claros e recorte doX de vidro, com GrupoIOXatribuído à cifra.",
+        "H5": "Café ambiental/celular de costas na arquitetura; manter headline completa, nenhum indicador de riscozero.",
+        "fallback": "Linguagem institucional neutra, geometriaIOXmaterialmente presente sem protagonista humano obrigatório."
+      },
+      "responsive": "No celular, texto e CTA antes da imagem; o objeto/material pode ser recortado proporcionalmente. Não reduzir copy nem deformar imagem.",
+      "doNot": "Não reaproveitar o hero de legado daLPteste como título; não adicionar badge,NOVO,logosXPououtrosconteúdosdasreferências."
+    },
+    {
+      "sectionId": "numeros",
+      "direction": "Faixa editorial clara ou neutra com quatro unidades numéricas abertas, alinhadas por tipografia e respiro; sem quatro cards contornados. Separar visualmente os dois dados dofundo e osdois dados doGrupo, com rótulos integrais. Nota completa em linha abaixo.",
+      "responsive": "Duas colunas no celular ou pilha aberta, preservando cada rótulo; não transformar a faixa em carrossel que esconda informação."
+    },
+    {
+      "sectionId": "para-quem-e",
+      "direction": "Seção branca aberta com título à esquerda e parágrafo integral em largura confortável. Destacar tipograficamente a qualificação e o prazo90dias dentro doconteúdo, sem criar novos bullets/resumos que apaguem frases. Um fragmento deoutline da marca pode equilibrar lateral, sem fundo de caixinhas."
+    },
+    {
+      "sectionId": "como-funciona",
+      "direction": "Três etapas como sequência editorial aberta, sem cartões sobrepostos. Papel+explicação formam unidade; separar as três etapas por espaço real, mantendo cada frase. Números deprocesso só se úteis e derivados da ordem1–3 da fonte; não imitar contadores doscriativos rejeitados.",
+      "responsive": "Uma etapa por linha no celular, texto integral semprevisível."
+    },
+    {
+      "sectionId": "essencial",
+      "direction": "Lista técnica de cinco linhas ou duas colunas abertas, rótulo em Medium e valor/texto em Regular. Usar divisórias sutis apenas para leitura dosdados, sem badges/ícones decorativos para cada condição. NomesTerconAsset eQITechclaros; não atribuir gestão aoGrupo. Todasasfrasesdetaxas/IR/carteiracontinuamvisíveis."
+    },
+    {
+      "sectionId": "especialistas",
+      "direction": "Fotografias reais deHélio,Renan,Vitor,Vivian commesmo tratamento de luz/crop e seus nomes exatos; uma faixa de retratos sem cartões contornados. Título e parágrafo integral acima. Não usar Ivo, mulherficcional ou foto gerada como substituto destes profissionais.",
+      "pendingAssets": "Confirmar ativos reais autorizados e resolução. Não inventar biografias, cargos ou credenciais."
+    },
+    {
+      "sectionId": "formulario",
+      "direction": "Área focal clara ou escura contrastante, título e introdução integrais, sete campos com labels/opções. Contato e qualificação podem ser agrupados visualmente sem inserir copy nova. Campos têm limites/estados funcionais acessíveis; evitar caixas decorativas envolvendo o grupo. CTA exato e consentimento logo abaixo, comlinkPolítica dePrivacidade.",
+      "responsive": "Uma coluna no celular; layout de campos emduascolunas no desktop sóse preservar ordem e leitura. Não inventar campos, checkboxes deconsentimento ou mensagens finais.",
+      "sourceCaveat": "Fonte não especifica obrigatoriedade doscampos, seleçãoúnica/múltipla ou validações; definir implementação depois. O termo4perguntas corresponde àsquatroqualificações, além dostrêscontatos."
+    },
+    {
+      "sectionId": "rodape",
+      "direction": "Bloco legal aberto comtipografia legível e contraste suficiente, sem comprimir ou reduzir a letrinha até apagar informação. Preservar aviso inteiro. Complemento daLPdeCDIé dependência, não preencher com texto inventado."
+    }
+  ],
+  "visualLanguage": {
+    "referenceRole": "Referências XP eLPteste orientam somente visual/estrutura. Toda copy é a dafonte; seçõesdareferência podem ser removidas/adaptadas sem omitir estes8blocos.",
+    "type": "Plus Jakarta Sans Regular/Medium/SemiBold;contraste de escala comrespiro porunidade semântica.",
+    "color": "Preto ebranco, neutrosmateriaisprata/cinza,douradopontual.",
+    "layout": "Largas seções abertas, tipografia ealinhamentoconduzindo hierarquia; sem grid genérico de cards, glasssituacional comoelemento e não efeito emcada bloco.",
+    "contentLimits": [
+      "Não adicionarhero de legadofinanceiro daLPteste.",
+      "Não inserircomparação2025,simulador,FAQextra oulifestylecomcopyinventada naLPA.",
+      "Não copiar cartões,selos,pílulas,textos,marcaXPou números dasreferências.",
+      "Não removerinformação para caber noestilo.",
+      "Assinatura usa ativo originalIOX; reconstructionSVG éestudo aproximado e não substitui ooriginal."
+    ]
+  },
+  "pending": [
+    {
+      "id": "legal-lp-cdi",
+      "sourcePages": [
+        26
+      ],
+      "type": "fonte-a-recuperar",
+      "detail": "O aviso da lâmina está integralmente transcrito, mas falta o complemento legal da LP de CDI exigido pela fonte. Não declarar rodapé final completo até recuperar e conferir nome do fundo."
+    },
+    {
+      "id": "dados-historicos",
+      "sourcePages": [
+        24,
+        25
+      ],
+      "type": "validacao-institucional",
+      "detail": "Prova de meses positivos desde agosto/2023, volatilidade0,48%,22anos eR$3,8bilhões devem ter período/fonte revistos com material vigente; transcrição dobriefing não comprova os números."
+    },
+    {
+      "id": "nota-numeros",
+      "sourcePages": [
+        25
+      ],
+      "type": "atribuicao-a-conferir",
+      "detail": "A nota da fonte diz Dados doFundoIOX90 conforme lâmina setembro2026, mas a faixa também contém22anos ePLdoGrupo. Preservar redação na copy e validar atribuições/fontes sem alterar silenciosamente."
+    },
+    {
+      "id": "condicoes-fundo",
+      "sourcePages": [
+        25
+      ],
+      "type": "validacao-institucional",
+      "detail": "Confirmar com documentação vigente resgate90dias,taxaR$8mil/mês,IR15%noresgate,carteira eentidadesresponsáveis. Não alterar copy na preparação nem apresentar taxa como cobrança individual sem esclarecimento."
+    },
+    {
+      "id": "qualificacao-limites-formulario",
+      "sourcePages": [
+        25,
+        28
+      ],
+      "type": "regra-de-negocio",
+      "detail": "Texto usa mais deR$1milhão; opção inicia emDeR$1milhãoaR$5milhões e fronteiraR$300mil aparece nasduasfaixas. Preservar opções exatas; confirmar classificação/limites antes da lógica dequalificação."
+    },
+    {
+      "id": "valor-minimo",
+      "sourcePages": [
+        27
+      ],
+      "type": "validacao-institucional",
+      "detail": "FAQ daLPB nesta mesmafonte indica mínimo aguardando compliance. LPA não traz mínimo; não inserir R$25mil nem qualquer valor deentrada."
+    },
+    {
+      "id": "especialistas-fotos",
+      "sourcePages": [
+        26
+      ],
+      "type": "ativo-real",
+      "detail": "Obter/verificar fotos reais autorizadas deHélio,Renan,Vitor,Vivian; sem inventar cargo/bio/credencial."
+    },
+    {
+      "id": "politica-privacidade",
+      "sourcePages": [
+        28
+      ],
+      "type": "url-a-confirmar",
+      "detail": "Consentimento exato estáincluído. URL daPolítica dePrivacidade e destino desubmissão não estão definidos naspáginas24–28."
+    },
+    {
+      "id": "utm-desconhecido",
+      "sourcePages": [
+        24
+      ],
+      "type": "comportamento-a-definir",
+      "detail": "Fonte prevê padrão semUTM e seleção porutm_content. Tratamento devalor inválido/desconhecido não estáespecificado; definir sem alterarcopy."
+    }
+  ],
+  "notInThisLPA": [
+    "Corpo daLPB(p26–27)não fazpartedestaLP,excetoformuláriocompartilhadodap28.",
+    "LeadAdsda p28éoutroentregável, não seçãoadicionalLPA.",
+    "Formulárioem etapasP4 é alternativa defluxo, não substituição automática doformulárioLPA; rótulosnecessários estão nos7camposoriginais."
+  ],
+  "integrity": {
+    "heroVariants": 6,
+    "hypotheses": 5,
+    "fallback": 1,
+    "sharedBodySections": 8,
+    "metrics": 4,
+    "steps": 3,
+    "essentialsItems": 5,
+    "realExpertsNamed": 4,
+    "formFields": 7,
+    "contactFields": 3,
+    "qualificationQuestions": 4,
+    "options": 15,
+    "consentIncluded": true,
+    "fullFundDisclaimerIncluded": true,
+    "legalExtensionMarkedPending": true,
+    "sourceStringChecks": 65,
+    "sourceStringChecksPassed": 65,
+    "sourceStringChecksDetails": [
+      {
+        "label": "H1 title",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H1 subtitle",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H2 title",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H2 subtitle",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H3 title",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H3 subtitle",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H4 title",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H4 subtitle",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H5 title",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "H5 subtitle",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "fallback title",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "fallback subtitle",
+        "sourcePage": 24,
+        "pass": true
+      },
+      {
+        "label": "qualifier",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "hero cta",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "hero legal",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "number0",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "number1",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "number2",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "number3",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "number note",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "for whom title",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "for whom text",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "steps title",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "step Converse",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "step Abra sua conta",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "step Invista",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "essentials Resgate",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "essentials Taxas",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "essentials Imposto",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "essentials Quem cuida",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "essentials Carteira",
+        "sourcePage": 25,
+        "pass": true
+      },
+      {
+        "label": "experts title",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "experts text",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "expert Hélio",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "expert Renan",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "expert Vitor",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "expert Vivian",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "form title",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "form text",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "field name",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "field email",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "field phone",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "field invested",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option invested Até R$ 300 mil",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option invested De R$ 300 mil a R$ 1 milhão",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option invested De R$ 1 milhão a R$ 5 milhões",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option invested Acima de R$ 5 milhões",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "field currentInvestments",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option currentInvestments Renda Fixa",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option currentInvestments Renda Variável",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option currentInvestments Crédito Estruturado",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option currentInvestments Imóveis",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option currentInvestments Criptos",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option currentInvestments Ainda não invisto",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "field timing",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option timing Sim",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option timing Estou avaliando",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "field preferredTime",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option preferredTime Manhã",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option preferredTime Tarde",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "option preferredTime Noite",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "form cta",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "consent",
+        "sourcePage": 28,
+        "pass": true
+      },
+      {
+        "label": "footer legal",
+        "sourcePage": 26,
+        "pass": true
+      },
+      {
+        "label": "pending legal instruction",
+        "sourcePage": 26,
+        "pass": true
+      }
+    ],
+    "createdLayouts": 0,
+    "figmaMutations": 0,
+    "uiActions": 0,
+    "previousFilesChanged": 0
+  }
+}
