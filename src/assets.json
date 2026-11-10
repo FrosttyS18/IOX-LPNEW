@@ -19,5 +19,7 @@
   "fontLight": "https://cdn.frostty.com.br/iox-lpnew/2026-11-10/font-light.c96871f21917.ttf",
   "headerShapeMobile": "https://cdn.frostty.com.br/iox-lpnew/2026-11-10/header-shape-mobile.849cc3b80031.svg",
   "essentialsGlass": "https://cdn.frostty.com.br/iox-lpnew/2026-11-10/essentials-glass.036506afb446.webp",
-  "metricsGlass": "https://cdn.frostty.com.br/iox-lpnew/2026-11-10/metrics-glass.477cdc239c10.webp"
+  "metricsGlass": "https://cdn.frostty.com.br/iox-lpnew/2026-11-10/metrics-glass.477cdc239c10.webp",
+  "essentialsGlassComplete": "https://cdn.frostty.com.br/iox-lpnew/2026-11-10/essentials-glass-complete.3a3b77486956.webp",
+  "heroHouseMobile": "https://cdn.frostty.com.br/iox-lpnew/2026-11-10/hero-mobile-family.7b3f9a032d0e.webp"
 }

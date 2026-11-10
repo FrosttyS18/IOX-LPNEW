@@ -26,5 +26,5 @@ export function renderLegal(legal) {
     }
     return `<p>${html}</p>`;
   });
-  return `<div class="footer-legal">\n${paragraphs.join('\n')}\n</div>`;
+  return `<div class="footer-legal">\n${paragraphs[0]}\n<details class="legal-details"><summary class="legal-toggle"><span class="legal-expand-label">Ver mais</span><span class="legal-collapse-label">Ver menos</span></summary><div class="legal-remainder">\n${paragraphs.slice(1).join('\n')}\n</div></details>\n</div>`;
 }
