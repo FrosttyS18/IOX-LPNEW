@@ -96,6 +96,8 @@ h1{font-size:60px;font-weight:600;letter-spacing:-.01em;line-height:1.2;min-heig
 .audience-copy p{max-width:456px}
 .audience-copy p:first-child{font-weight:500}
 .audience-image{width:100%;height:380px;object-fit:cover;object-position:center;border-radius:var(--radius)}
+.audience-family{position:relative;overflow:hidden;border-radius:24px}
+.audience-family-photo{position:absolute;right:0;top:0;width:clamp(1088px,189.470289%,1250.503906px);height:auto;max-width:none;transform:translateY(-30.130666%)}
 .flow{padding-top:170px}
 .flow .section-title{max-width:760px}
 .steps{--reveal-distance:24px;list-style:none;padding:0;margin:34px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
@@ -218,6 +220,7 @@ section[id]{scroll-margin-top:30px}
   .metric-positive .metric-value{font-size:35px}
   .audience-grid{grid-template-columns:1fr 1fr}
   .audience-copy{padding:28px 24px;min-height:380px;font-size:18px;line-height:1.3;letter-spacing:-.005em}
+  .audience-family-photo{width:100%;height:100%;object-fit:cover;object-position:100% 50%;transform:none}
   .steps{gap:16px}
   .steps li{padding-inline:20px}
   .steps h3{font-size:22px}
@@ -281,6 +284,7 @@ section[id]{scroll-margin-top:30px}
   .audience-copy{min-height:0;padding:26px 24px;font-size:18px;line-height:1.4}
   .audience-copy p+p{margin-top:20px}
   .audience-image{height:auto;aspect-ratio:1.6;object-position:center}
+  .audience-family-photo{width:189.470289%;height:auto;transform:translateY(-30.130666%)}
   .flow{padding-top:76px}
   .steps{grid-template-columns:1fr;margin-top:32px;gap:16px}
   .steps li{min-height:0;padding:24px;display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:14px;align-content:start}

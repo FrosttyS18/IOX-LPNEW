@@ -95,7 +95,7 @@ export function renderPage(source, assets, legal, approved) {
       <h2 id="audience-title" class="section-title" tabindex="-1">${desktopLines(approved.audienceTitle)}</h2>
       <div class="audience-grid">
         <div class="audience-copy"><div class="audience-text">${approved.audienceParagraphs.map(text => `<p>${desktopLines(text)}</p>`).join('')}</div></div>
-        ${image(assets.audience, 'Ambiente empresarial com fachada de vidro e área de operação.', 'audience-image', 1122, 1402)}
+        <div class="audience-image audience-family">${image(assets.heroJet, 'Família com duas crianças reunida no sofá de um jatinho.', 'audience-family-photo', 1774, 887)}</div>
       </div>
     </section>
 
