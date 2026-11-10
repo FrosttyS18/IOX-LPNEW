@@ -1,30 +1,36 @@
 {
-  "sourceFrame": "126:4282",
+  "sourceFrame": "154:5845",
   "heroTitle": "Para quem já\nconstruiu patrimônio.",
-  "heroSubtitle": "O Fundo IOX 90 é restrito a investidores\nqualificados e fechou no positivo\ntodos os meses desde agosto de 2023.",
-  "qualification": "Exclusivo para investidores qualificados\n(mais de R$ 1 milhão em aplicações financeiras).",
-  "metricPositive": "Todos os meses\nno positivo",
-  "metricYearLabel": "do Grupo IOX\nno mercado de crédito",
-  "audienceTitle": "Um fundo feito para\nquem já investe.",
+  "heroSubtitle": "O Fundo IOX 90 é reservado a um grupo seleto de investidores: quem já tem uma carteira consolidada e busca diversificar com crédito privado.",
+  "heroCta": "Agendar uma conversa",
+  "qualification": "",
+  "metricPositive": "159% do CDI",
+  "metricPositivePeriod": "Desde agosto de 2023",
+  "metricTitle": "Resultado consistente, mês após mês.",
+  "metricAnnualValue": "20,38%",
+  "metricAnnualPeriod": "em 12 meses",
+  "metricAnnualComparison": "contra 14,69% do CDI",
+  "metricConsistency": "Nenhum mês no negativo",
+  "metricNote": "Rentabilidade líquida de taxas, conforme a lâmina de outubro de 2026.",
+  "audienceTitle": "Um fundo para quem já investe.",
   "audienceParagraphs": [
-    "O Fundo IOX 90 é destinado a\ninvestidores qualificados, ou seja,\npessoas com mais de R$ 1 milhão em\naplicações financeiras.",
-    "É para quem já tem reserva e renda fixa e quer diversificar com crédito, usando uma\nparte do patrimônio que pode ficar 90\ndias sem resgate."
+    "Pensado para quem já tem a base da\ncarteira resolvida e quer dedicar uma\nparte do patrimônio ao crédito privado,\ncom horizonte de 90 dias."
   ],
   "flowTitle": "Do primeiro contato ao\nprimeiro aporte.",
   "stepBodies": [
-    "um especialista do Grupo IOX\nexplica o fundo, o prazo\ne os riscos.",
-    "a abertura é feita na QI Tech,\ne o especialista acompanha\ncada etapa.",
-    "você faz o primeiro aporte e,\ndepois, pode aportar o valor que\nquiser, quando quiser."
+    "Um especialista apresenta o\nfundo, o prazo e os riscos.",
+    "Na QI Tech, com acompanhamento\nem cada etapa.",
+    "A partir de R$ 25 mil.\nDepois, aportes livres."
   ],
   "essentialValues": [
     "em 90 dias após o pedido.",
     "taxa fixa de R$ 8 mil por mês, que já inclui administração e gestão. Sem\ntaxa de performance.",
     "IR de 15% sobre o lucro, retido só no resgate.",
-    "gestão da Tercon Asset, administração e custódia da QI Tech.",
     "antecipação de recebíveis de empresas, com prazos curtos e pulverizada\nentre quem vende e quem paga."
   ],
   "expertsTitle": "Quem vai conversar\ncom você.",
-  "expertsIntro": "Antes de qualquer decisão, você fala com uma pessoa.\nNossos especialistas explicam o fundo com calma e respondem todas as suas dúvidas.",
-  "contactTitle": "Fale com um\nespecialista.",
-  "contactIntro": "Responda 4 perguntas rápidas\npara o especialista preparar\na sua conversa."
+  "expertsIntro": "Antes de qualquer decisão, uma conversa.\nSem pressa e sem roteiro pronto.",
+  "contactTitle": "Agende sua\nconversa.",
+  "contactIntro": "Quatro perguntas para o\nespecialista chegar preparado.",
+  "contactProof": "Você vai conversar com o time\ndo Grupo IOX, entre os 10 maiores\ngestores e consultores\nde FIDC do Brasil."
 }

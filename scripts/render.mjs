@@ -1,4 +1,5 @@
 import {renderLegal} from './legal-render.mjs';
+import {renderPerformance} from './performance-render.mjs';
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const image = (src, alt, classes, width, height, priority = false) => `<img class="${classes}" src="${escape(src)}" alt="${escape(alt)}" width="${width}" height="${height}" ${priority ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"'}>`;
 
@@ -50,6 +51,7 @@ export function renderPage(source, assets, legal, approved) {
   <link rel="preload" href="${escape(assets.fontRegular)}" as="font" type="${regularType}" crossorigin>
   <link rel="preload" href="${escape(assets.fontSemiBold)}" as="font" type="${semiType}" crossorigin>
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/performance.css">
   <script type="module" src="/main.mjs"></script>
 </head>
 <body>
@@ -68,40 +70,47 @@ export function renderPage(source, assets, legal, approved) {
       <div class="hero-content">
         <h1 id="hero-title">${desktopLines(approved.heroTitle)}</h1>
         <p id="hero-subtitle" class="hero-subtitle">${desktopLines(approved.heroSubtitle)}</p>
-        <p class="qualification">${desktopLines(approved.qualification)}</p>
         <a class="button hero-cta" href="#formulario">${escape(top.cta)}</a>
-        <p class="hero-disclaimer">${escape(top.disclaimer)}</p>
       </div>
     </section>
 
     <section class="metrics container" aria-labelledby="metrics-title">
-      <h2 id="metrics-title" class="section-title">Os números</h2>
+      <h2 id="metrics-title" class="section-title">${escape(approved.metricTitle)}</h2>
       <div class="metrics-mosaic">
         <div class="metric metric-positive">
           ${image(assets.metricsGlass, '', 'metric-glass', 780, 674)}
-          <p class="metric-value">${desktopLines(approved.metricPositive)}</p><p class="metric-label">desde agosto de 2023</p>
+          <p class="metric-value"><span class="metric-gold">159%</span> do CDI</p><p class="metric-label">${escape(approved.metricPositivePeriod)}</p>
+          <a class="button metrics-cta" href="#formulario">${escape(top.cta)}</a>
         </div>
+        <div class="metric metric-twelve"><p class="metric-value">${escape(approved.metricAnnualValue)}</p><p class="metric-period">${escape(approved.metricAnnualPeriod)}</p><p class="metric-comparison">${escape(approved.metricAnnualComparison)}</p></div>
         <div class="metric metric-volatility"><p class="metric-value" data-counter="0.48" data-decimals="2" data-prefix="" data-suffix="%"><span class="counter-visual" aria-hidden="true">0,48%</span><span class="visually-hidden">0,48%</span></p><p class="metric-label">de volatilidade anualizada</p></div>
-        <div class="metric metric-years"><p class="metric-value">22 anos</p><p class="metric-label">${mobilePhrases(desktopLines(approved.metricYearLabel), ['do Grupo IOX','no mercado','de crédito'])}</p></div>
-        <div class="metric metric-wealth">
-          ${image(assets.office, '', 'metric-office', 1122, 1402)}
-          <p class="metric-value" data-counter="3.8" data-decimals="1" data-prefix="R$ " data-suffix=" bilhões"><span class="counter-visual" aria-hidden="true">R$ 3,8 bilhões</span><span class="visually-hidden">R$ 3,8 bilhões</span></p><p class="metric-label">de patrimônio líquido no Grupo IOX</p>
-        </div>
+        <div class="metric metric-consistency"><p class="metric-value">${escape(approved.metricConsistency)}</p><p class="metrics-note">${escape(approved.metricNote)}</p></div>
       </div>
-      <p class="metrics-note">${escape(sections[1].copy.note)}</p>
+    </section>
+
+    <section class="group container" aria-labelledby="group-title">
+      <h2 id="group-title" class="section-title">${desktopLines(source.group.title)}</h2>
+      <p class="group-intro">${source.group.intro.map(line => `<span>${escape(line)}</span>`).join(' ')}</p>
+      <div class="group-mosaic">
+        <div class="group-card group-top"><p class="group-value">${escape(source.group.topTitle)}</p><p>${desktopLines(source.group.topLabel)}</p></div>
+        <div class="group-card group-years"><p class="group-value">${escape(source.group.yearsTitle)}</p><p>${escape(source.group.yearsLabel)}</p></div>
+        <div class="group-card group-structure">${image(assets.groupGlass, '', 'group-glass', 532, 762)}<p class="group-value">${escape(source.group.structureTitle)}</p><p>${desktopLines(source.group.structureLabel)}</p></div>
+        <div class="group-office">${image(assets.groupOffice, 'Sala de reuniões do Grupo IOX, com símbolo da marca na parede e vista da cidade.', '', 1070, 762)}</div>
+      </div>
+      <p class="group-note">${desktopLines(source.group.note)}</p>
     </section>
 
     <section id="para-quem" class="audience container" aria-labelledby="audience-title">
       <h2 id="audience-title" class="section-title" tabindex="-1">${desktopLines(approved.audienceTitle)}</h2>
       <div class="audience-grid">
-        <div class="audience-copy"><div class="audience-text">${approved.audienceParagraphs.map(text => `<p>${desktopLines(text)}</p>`).join('')}</div></div>
-        <div class="audience-image audience-family">${image(assets.heroJet, 'Família com duas crianças reunida no sofá de um jatinho.', 'audience-family-photo', 1774, 887)}</div>
+        <div class="audience-copy"><div class="audience-text">${approved.audienceParagraphs.map(text => `<p>${desktopLines(text)}</p>`).join('')}<a class="button audience-cta" href="#formulario">${escape(approved.heroCta)}</a></div></div>
+        ${renderPerformance()}
       </div>
     </section>
 
     <section id="como-funciona" class="flow container" aria-labelledby="flow-title">
       <h2 id="flow-title" class="section-title" tabindex="-1">${desktopLines(approved.flowTitle)}</h2>
-      <ol class="steps">${flow.steps.map((step, i) => `<li><span class="step-number" aria-hidden="true">${i + 1}</span><h3>${escape(step.label)}:</h3><p>${desktopLines(approved.stepBodies[i])}</p></li>`).join('')}</ol>
+      <ol class="steps">${flow.steps.map((step, i) => `<li><span class="step-number" aria-hidden="true">${i + 1}</span><h3>${escape(step.label)}</h3><p>${desktopLines(approved.stepBodies[i])}</p></li>`).join('')}</ol>
     </section>
 
     <section class="essentials container" aria-labelledby="essentials-title">
@@ -116,11 +125,11 @@ export function renderPage(source, assets, legal, approved) {
     </section>
 
     <section id="formulario" class="contact container" aria-labelledby="contact-title">
-      <div class="contact-intro"><h2 id="contact-title" tabindex="-1">${desktopLines(approved.contactTitle)}</h2><p>${mobilePhrases(desktopLines(approved.contactIntro), ['para o especialista','sua conversa.'])}</p></div>
+      <div class="contact-intro"><h2 id="contact-title" tabindex="-1">${desktopLines(approved.contactTitle)}</h2><p>${desktopLines(approved.contactIntro)}</p><p class="contact-proof">${desktopLines(approved.contactProof)}</p></div>
       <form id="specialist-form" method="post" action="#formulario" aria-describedby="form-consent">
         <div class="form-fields">${fieldHtml}</div>
         <button class="button button-gold submit-button" type="submit" disabled>${escape(form.cta)}</button>
-        <p id="form-consent" class="form-consent">${escape(form.consent)}</p>
+        <p id="form-consent" class="form-consent">${desktopLines(form.consent)}</p>
         <p id="form-status" class="form-status" role="status" tabindex="-1" hidden></p>
         <noscript><p class="form-status">Ative o JavaScript para usar a validação deste formulário. O envio ainda não está disponível.</p></noscript>
       </form>

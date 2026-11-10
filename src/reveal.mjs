@@ -1,7 +1,7 @@
 export function enhanceReveals() {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)');
   if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
-  const targets = [...document.querySelectorAll('.section-title,.metrics-mosaic>.metric,.audience-grid>*,.steps>li,.essentials-grid>*,.experts-intro,.expert-list>figure,.contact-intro,.form-fields>.field,.submit-button,.form-consent')];
+  const targets = [...document.querySelectorAll('.section-title,.metrics-mosaic>.metric,.group-intro,.group-mosaic>*,.audience-grid>*,.steps>li,.essentials-grid>*,.experts-intro,.expert-list>figure,.contact-intro,.form-fields>.field,.submit-button,.form-consent')];
   const observer = new IntersectionObserver(entries => {
     for (const entry of entries) {
       if (!entry.isIntersecting) continue;

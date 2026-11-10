@@ -11,7 +11,7 @@
   "additionalCrossCheckPage": 27,
   "sourceFile": "C:/iox/work/linha-criativa-2026-11-10/fonte-paginas.json",
   "sourcePdf": "C:/iox/outputs/linha-criativa-2026-11-09/fonte/IOX90_Linha_criativa_e_variacoes.pdf",
-  "scope": "Preparação integral de copy e mapa visual. Nenhuma implementaçãoFigma/código/UI, nenhuma alteração de75frames, integrações ou páginas ao vivo.",
+  "scope": "Implementação autorizada da cópia atual do Figma154:5845, com intervenções manuais preservadas.",
   "copyPolicy": "Textos doLéo preservados integralmente, normalizando sóquebras de linha. copy eheroes são fonte; visualMap eobservações são propostas, não novos textos da página.",
   "sharedBodyRuleSource": "O topo da LP A muda conforme a hipótese do anúncio, para a pessoa encontrar na página a mesma frase que a fez clicar. O resto da página é igual para todas. A versão é escolhida pelo utm_content.",
   "utm": {
@@ -68,13 +68,13 @@
             "id": "fallback",
             "sourceLabel": "Padrão (sem utm)",
             "title": "Para quem já construiu patrimônio.",
-            "subtitle": "O Fundo IOX 90 é restrito a investidores qualificados e fechou no positivo todos os meses desde agosto de 2023.",
+            "subtitle": "O Fundo IOX 90 é reservado a um grupo seleto de investidores: quem já tem uma carteira consolidada e busca diversificar com crédito privado.",
             "sourcePage": 24
           }
         ],
-        "qualificationLine": "Exclusivo para investidores qualificados (mais de R$ 1 milhão em aplicações financeiras).",
-        "cta": "Quero falar com um especialista.",
-        "disclaimer": "Rentabilidade passada não é garantia de rentabilidade futura."
+        "qualificationLine": "",
+        "cta": "Agendar uma conversa",
+        "disclaimer": ""
       },
       "sourceBehavior": "Ele rola a página até o formulário."
     },
@@ -87,12 +87,12 @@
       ],
       "copy": {
         "items": [
-          "Todos os meses no positivo desde agosto de 2023",
+          "159% do CDI Desde agosto de 2023",
+          "20,38% em 12 meses contra 14,69% do CDI",
           "0,48% de volatilidade anualizada",
-          "22 anos do Grupo IOX no mercado de crédito",
-          "R$ 3,8 bilhões de patrimônio líquido no Grupo IOX"
+          "Nenhum mês no negativo"
         ],
-        "note": "Dados do Fundo IOX 90 conforme a lâmina de setembro de 2026. Rentabilidade passada não é garantia de rentabilidade futura."
+        "note": "Rentabilidade líquida de taxas, conforme a lâmina de outubro de 2026."
       }
     },
     {
@@ -103,8 +103,8 @@
         25
       ],
       "copy": {
-        "title": "Um fundo feito para quem já investe.",
-        "text": "O Fundo IOX 90 é destinado a investidores qualificados, ou seja, pessoas com mais de R$ 1 milhão em aplicações financeiras. É para quem já tem reserva e renda fixa e quer diversificar com crédito, usando uma parte do patrimônio que pode ficar 90 dias sem resgate."
+        "title": "Um fundo para quem já investe.",
+        "text": "Pensado para quem já tem a base da carteira resolvida e quer dedicar uma parte do patrimônio ao crédito privado, com horizonte de 90 dias."
       }
     },
     {
@@ -119,15 +119,15 @@
         "steps": [
           {
             "label": "Converse",
-            "text": "um especialista do Grupo IOX explica o fundo, o prazo e os riscos."
+            "text": "Um especialista apresenta o fundo, o prazo e os riscos."
           },
           {
             "label": "Abra sua conta",
-            "text": "a abertura é feita na QI Tech, e o especialista acompanha cada etapa."
+            "text": "Na QI Tech, com acompanhamento em cada etapa."
           },
           {
             "label": "Invista",
-            "text": "você faz o primeiro aporte e, depois, pode aportar o valor que quiser, quando quiser."
+            "text": "A partir de R$ 25 mil. Depois, aportes livres."
           }
         ]
       }
@@ -154,10 +154,6 @@
             "text": "IR de 15% sobre o lucro, retido só no resgate."
           },
           {
-            "label": "Quem cuida",
-            "text": "gestão da Tercon Asset, administração e custódia da QI Tech."
-          },
-          {
             "label": "Carteira",
             "text": "antecipação de recebíveis de empresas, com prazos curtos e pulverizada entre quem vende e quem paga."
           }
@@ -174,7 +170,7 @@
       ],
       "copy": {
         "title": "Quem vai conversar com você.",
-        "text": "Antes de qualquer decisão, você fala com uma pessoa. Nossos especialistas explicam o fundo com calma e respondem todas as suas dúvidas.",
+        "text": "Antes de qualquer decisão, uma conversa. Sem pressa e sem roteiro pronto.",
         "names": [
           "Hélio",
           "Renan",
@@ -193,8 +189,8 @@
         28
       ],
       "copy": {
-        "title": "Fale com um especialista.",
-        "text": "Responda 4 perguntas rápidas para o especialista preparar a sua conversa.",
+        "title": "Agende sua conversa.",
+        "text": "Quatro perguntas para o especialista chegar preparado.",
         "fields": [
           {
             "id": "name",
@@ -269,8 +265,9 @@
             "category": "qualificacao"
           }
         ],
-        "cta": "Quero minha conversa.",
-        "consent": "Ao enviar, você concorda com a Política de Privacidade e em receber contato do Grupo IOX."
+        "cta": "Quero agendar",
+        "consent": "Ao enviar, você concorda com a Política de Privacidade\ne em receber o contato de um especialista do Grupo IOX.",
+        "proof": "Você vai conversar com o time do Grupo IOX, entre os 10 maiores gestores e consultores de FIDC do Brasil."
       },
       "sourceCrossReference": "As perguntas estão na seção de formulários, abaixo."
     },
@@ -783,5 +780,20 @@
     "figmaMutations": 0,
     "uiActions": 0,
     "previousFilesChanged": 0
+  },
+  "group": {
+    "title": "Um dos maiores do país em FIDC.\nDiscreto como deve ser.",
+    "intro": [
+      "O Grupo IOX está entre os 10 maiores gestores e consultores de FIDC do Brasil",
+      "e atua há 22 anos no mercado de crédito. Talvez você ainda não conheça o nome.",
+      "Crescemos longe dos holofotes, ao lado de quem já investe."
+    ],
+    "topTitle": "Top 10",
+    "topLabel": "gestores e consultores\nde FIDC do Brasil*",
+    "yearsTitle": "22 anos",
+    "yearsLabel": "no mercado de crédito",
+    "structureTitle": "Estrutura",
+    "structureLabel": "gestão da Tercon Asset,\nadministração e custódia\nda QI Tech",
+    "note": "* Ranking por patrimônio líquido do levantamento “Os 20 maiores gestores de FIDCs do Brasil” (Times Brasil, mar/2026),\ncom base em dados públicos da CVM. A posição é do Grupo IOX, não do Fundo IOX 90."
   }
 }

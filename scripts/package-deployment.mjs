@@ -2,7 +2,7 @@ import {createHash} from 'node:crypto';
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 
 const root = new URL('../', import.meta.url);
-const files = ['index.html', 'styles.css', 'main.mjs', 'hero.mjs', 'page-data.mjs', 'select.mjs', 'essentials.mjs', 'navigation.mjs', 'reveal.mjs', 'counters.mjs'];
+const files = ['index.html', 'styles.css', 'main.mjs', 'hero.mjs', 'page-data.mjs', 'select.mjs', 'essentials.mjs', 'navigation.mjs', 'reveal.mjs', 'counters.mjs', 'performance.css', 'performance.mjs', 'performance-model.mjs', 'performance-data.mjs'];
 const mime = {html:'text/html; charset=utf-8', css:'text/css; charset=utf-8', mjs:'text/javascript; charset=utf-8', txt:'text/plain; charset=utf-8'};
 const manifest = {};
 const uploads = {};

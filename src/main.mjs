@@ -5,6 +5,7 @@ import {enhanceEssentials} from './essentials.mjs';
 import {enhanceNavigation} from './navigation.mjs';
 import {enhanceReveals} from './reveal.mjs';
 import {enhanceCounters} from './counters.mjs';
+import {enhancePerformance} from './performance.mjs';
 
 enhanceEssentials(document.querySelector('.essentials-list'));
 
@@ -37,6 +38,7 @@ if (variant && key !== 'fallback') {
 enhanceNavigation();
 enhanceReveals();
 enhanceCounters();
+enhancePerformance(document.querySelector('.performance-chart'));
 
 const form = document.querySelector('#specialist-form');
 const submit = form.querySelector('button[type="submit"]');
