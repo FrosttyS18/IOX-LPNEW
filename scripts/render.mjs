@@ -40,7 +40,11 @@ export function renderPage(source, assets, legal, approved) {
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fundo IOX 90 | Grupo IOX">
   <meta property="og:description" content="Para quem já construiu patrimônio. Conheça o Fundo IOX 90.">
-  <meta property="og:image" content="${escape(assets.heroHouse)}">
+  <meta property="og:image" content="${escape(assets.ogImage)}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Símbolo IOX em vidro sobre fundo preto.">
   <meta name="theme-color" content="#090a0a">
   <link rel="icon" href="${escape(assets.logo)}" type="image/png">
   <link rel="preload" href="${escape(assets.fontRegular)}" as="font" type="${regularType}" crossorigin>
