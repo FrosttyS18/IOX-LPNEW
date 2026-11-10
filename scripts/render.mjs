@@ -89,12 +89,12 @@ export function renderPage(source, assets, legal, approved) {
     </section>
 
     <section class="group container" aria-labelledby="group-title">
-      <h2 id="group-title" class="section-title">${desktopLines(source.group.title)}</h2>
-      <p class="group-intro">${source.group.intro.map(line => `<span>${escape(line)}</span>`).join(' ')}</p>
+      <h2 id="group-title" class="section-title">${source.group.title.split('\n').map(line => `<span class="group-title-line">${escape(line)}</span>`).join(' ')}</h2>
+      <p class="group-intro">${source.group.intro.map(line => `<span>${mobilePhrases(escape(line), ['do Brasil','de crédito','já investe.'])}</span>`).join(' ')}</p>
       <div class="group-mosaic">
         <div class="group-card group-top"><p class="group-value">${escape(source.group.topTitle)}</p><p>${desktopLines(source.group.topLabel)}</p></div>
         <div class="group-card group-years"><p class="group-value">${escape(source.group.yearsTitle)}</p><p>${escape(source.group.yearsLabel)}</p></div>
-        <div class="group-card group-structure">${image(assets.groupGlass, '', 'group-glass', 532, 762)}<p class="group-value">${escape(source.group.structureTitle)}</p><p>${desktopLines(source.group.structureLabel)}</p></div>
+        <div class="group-card group-structure"><picture><source media="(max-width:639px)" srcset="${escape(assets.groupGlassComplete)}">${image(assets.groupGlass, '', 'group-glass', 532, 762)}</picture><p class="group-value">${escape(source.group.structureTitle)}</p><p>${desktopLines(source.group.structureLabel)}</p></div>
         <div class="group-office">${image(assets.groupOffice, 'Sala de reuniões do Grupo IOX, com símbolo da marca na parede e vista da cidade.', '', 1070, 762)}</div>
       </div>
       <p class="group-note">${desktopLines(source.group.note)}</p>

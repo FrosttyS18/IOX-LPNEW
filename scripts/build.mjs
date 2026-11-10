@@ -8,7 +8,7 @@ const legal = JSON.parse(await readFile(new URL('src/legal.json', root), 'utf8')
 const approved = JSON.parse(await readFile(new URL('src/approved-lines.json', root), 'utf8'));
 const configured = JSON.parse(await readFile(new URL('src/assets.json', root), 'utf8'));
 const local = process.argv.includes('--local-assets');
-const required = ['logo','ogImage','headerShape','headerShapeMobile','heroHouse','heroHouseMobile','heroDoor','heroJet','heroAuthority','heroCalm','glass','office','audience','groupOffice','groupGlass','expert1','expert2','expert3','expert4','fontLight','fontRegular','fontMedium','fontSemiBold','essentialsGlass','metricsGlass','essentialsGlassComplete'];
+const required = ['logo','ogImage','headerShape','headerShapeMobile','heroHouse','heroHouseMobile','heroDoor','heroJet','heroAuthority','heroCalm','glass','office','audience','groupOffice','groupGlass','groupGlassComplete','expert1','expert2','expert3','expert4','fontLight','fontRegular','fontMedium','fontSemiBold','essentialsGlass','metricsGlass','essentialsGlassComplete'];
 const assets = {};
 for (const key of required) {
   if (local) assets[key] = `/__assets/${key}`;

@@ -17,6 +17,7 @@ test('published markup follows the revised Figma copy and preserves form options
   assert.ok(!html.includes('class="qualification"'));
   assert.ok(!html.includes('data-counter="3.8"'));
   assert.ok(html.includes('class="performance-chart"'));
+  for (const [id, value] of [['iox','77,70%'],['cdi','48,83%'],['ibov','42,83%']]) assert.ok(html.includes(`data-chart-return="${id}">${value}</strong>`), `Missing visible chart return: ${id}`);
   assert.ok(!html.includes('Brasil¹'));
   for (const [, target] of html.matchAll(/href="#([^"]+)"/g)) assert.ok(html.includes(`id="${target}"`), `Missing anchor: ${target}`);
   assert.equal((html.match(/class="essentials-row"/g) || []).length, 4);

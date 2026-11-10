@@ -22,6 +22,7 @@ export function enhancePerformance(chart) {
     chart.querySelector('[data-chart-range]').textContent = `${formatDate(result.start)} — ${formatDate(result.end)}`;
     chart.querySelectorAll('[data-chart-series]').forEach(input => input.checked = visible.has(input.dataset.chartSeries));
     chart.querySelectorAll('[data-chart-legend]').forEach(button => button.setAttribute('aria-pressed', String(visible.has(button.dataset.chartLegend))));
+    result.series.forEach(series => chart.querySelector(`[data-chart-return="${series.id}"]`).textContent = formatReturn(series.points.at(-1)[1]));
     tooltip.hidden = true;
     activeIndex = 0;
     status.classList.add('visually-hidden');
@@ -75,9 +76,12 @@ export function enhancePerformance(chart) {
     } catch (cause) {error(cause.message);}
   });
   details.forEach(detail => detail.addEventListener('toggle', () => {if (detail.open) details.filter(item => item !== detail).forEach(item => item.open = false);}));
-  document.addEventListener('pointerdown', event => {if (!event.target.closest('.chart-filter')) close();});
+  document.addEventListener('pointerdown', event => {
+    if (!event.target.closest('.chart-filter')) close();
+    if (!plot.contains(event.target)) hideInspection();
+  });
   chart.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {const open = details.find(detail => detail.open);close();open?.querySelector('summary').focus();tooltip.hidden = true;}
+    if (event.key === 'Escape') {const open = details.find(detail => detail.open);close();open?.querySelector('summary').focus();hideInspection();}
   });
   const hideInspection = () => {
     tooltip.hidden = true;
@@ -134,7 +138,7 @@ export function enhancePerformance(chart) {
     tooltip.style.left = `${Math.max(0, Math.min(plot.clientWidth - tooltip.offsetWidth, left))}px`;
     tooltip.style.top = `${Math.max(0, Math.min(plot.clientHeight - tooltip.offsetHeight, anchorY - tooltip.offsetHeight - 12))}px`;
   };
-  plot.addEventListener('pointermove', event => {
+  const inspectPointer = event => {
     if (!result) return;
     const box = plot.getBoundingClientRect();
     const ratio = Math.max(0, Math.min(1, (event.clientX - box.left - 26) / (box.width - 27)));
@@ -142,8 +146,11 @@ export function enhancePerformance(chart) {
     const points = result.series[0].points;
     const index = points.reduce((nearest, point, i) => Math.abs(point[0] - target) < Math.abs(points[nearest][0] - target) ? i : nearest, 0);
     inspect(index, {x:event.clientX - box.left, y:event.clientY - box.top});
-  });
-  plot.addEventListener('pointerleave', hideInspection);
+  };
+  plot.addEventListener('pointermove', inspectPointer);
+  plot.addEventListener('pointerup', event => {if (event.pointerType !== 'mouse') inspectPointer(event);});
+  plot.addEventListener('pointerleave', event => {if (event.pointerType === 'mouse') hideInspection();});
+  plot.addEventListener('pointercancel', hideInspection);
   plot.addEventListener('blur', hideInspection);
   plot.addEventListener('keydown', event => {
     if (!result || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
