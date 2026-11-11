@@ -2,6 +2,10 @@
 
 ## Estado vigente — implementação autorizada em 11/11/2026
 
+**Revisão de celular e notebook solicitada pelo designer:** viewport1738×803 reproduziu corte vertical de133px na arte do painel: o comportamento cover cortava logo/identificação. Agora a coluna e o painel preservam9:22 e se ajustam proporcionalmente à altura disponível, sem recortar o bitmap. O designer pediu Voltar/Continuar sempre visíveis e rolagem só no conteúdo. A jornada usa100dvh, cabeçalho/progresso e ações permanecem no viewport; apenas `.j-content` rola. As quebras manuais do Figma foram retiradas no mobile: fluxo natural/balance e unidades IOX90, valores monetários,90dias e frases curtas protegidas. Copy e regra Não2/3/5 preservadas; Figma não alterado nesta revisão de comportamento. A etapa4 desktop fica mais compacta em notebooks baixos e mantém as duas perguntas; mobile continua4A/4B.
+
+QA antes/depois em6viewportsnotebook e54estados comprovou o corte anterior e a correção proporcional. QA de ações fixas:107estados em11viewports de320×640 a1738×803, incluindo360×640/720,393×660/852 e1366×768. Botões visíveis antes/depois de rolar o conteúdo, nenhum scroll do diálogo inteiro, sem overflow horizontal e sem br forçado no mobile. Renders inspecionados;27testes passaram. Evidências `qa-notebook-before/after.json`, `qa-fixed-actions-final.json`, `fixed-final-*` na pasta da jornada. Essa revisão substitui o posicionamento vertical estático do rodapé anterior; a rolagem interna é intencional conforme pedido explícito.
+
 O designer autorizou expressamente “PODE IMPLEMENTAR” e depois pediu push para testar no site. Os dois formulários embarcados abrem a mesma Jornada IOX 90 v2, em uma vista de página inteira na identidade A. A tela final personalizada substitui o antigo obrigado com agenda. As URLs antigas `/obrigado/` e `/conversa/` retornam à LP de origem; o pacote publicado deixa de incluir a agenda e o quiz antigo.
 
 - Nove etapas, com saída ao responder Não em 2, 3 ou 5, exatamente conforme a copy do Léo.

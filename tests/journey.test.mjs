@@ -49,4 +49,6 @@ test('final personaliza com texto escapado e o mobile apresenta uma pergunta de 
   assert.ok(second.includes('name="suitability"'));assert.ok(!second.includes('name="wealth"'));
   assert.ok(first.includes('1 de 2'));assert.ok(second.includes('2 de 2'));
   const fund=journeyView({step:6},{},lead,true);assert.ok(fund.includes('class="j-download"'));assert.ok(fund.includes('download>'));assert.ok(fund.includes('Ver o fundo no Mais Retorno'));
+  const contribution=journeyView({step:3},{},lead,true);
+  assert.ok(!contribution.includes('j-line-break'));assert.ok(contribution.includes('<span class="j-keep">IOX 90</span>'));assert.ok(contribution.includes('<span class="j-keep">R$ 25 mil</span>'));
 });

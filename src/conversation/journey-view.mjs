@@ -7,7 +7,11 @@ export const backIcon='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><
 const downloadIcon='<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const checkIcon='<svg class="j-success" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="26" fill="#000"/><path d="m14 26 8 8 16-18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/></svg>';
 
-function formatted(text,mobile){return escapeHtml(journeyLines[mobile?'mobile':'desktop'][text]||text).replaceAll('\n',' <br class="j-line-break">');}
+function formatted(text,mobile){
+  const safe=escapeHtml(mobile?text:journeyLines.desktop[text]||text);
+  if(mobile)return safe.replace(/IOX 90|R\$\s\d+(?:[.,]\d+)*(?:\s(?:milhão|milhões|mil))?|90 dias|aporte inicial|aplicações financeiras/g,part=>`<span class="j-keep">${part}</span>`);
+  return safe.replaceAll('\n',' <br class="j-line-break">');
+}
 function choices(key,legend,answers,errors,mobile){
   return `<fieldset class="j-fieldset" data-field="${key}" ${errors[key]?'aria-describedby="j-error-'+key+'" aria-invalid="true"':''}><legend${legend?'':' class="j-sr-only"'}>${formatted(legend||titles[key==='qualified'?2:key==='knowsFidc'?5:key==='moment'?7:8],mobile)}</legend><div class="j-options">${journeyOptions[key].map(([value,label])=>`<label class="j-choice"><input type="radio" name="${key}" value="${value}" ${answers[key]===value?'checked':''}><span>${formatted(label,mobile)}</span></label>`).join('')}</div>${errors[key]?`<p class="j-error" id="j-error-${key}">${errors[key]}</p>`:''}</fieldset>`;
 }
