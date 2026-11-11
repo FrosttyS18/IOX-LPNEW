@@ -1,4 +1,4 @@
-.lp-b{display:flow-root;background:#090a0a;color:#fff;--b-muted:#cccfcc;--b-card:#141719}
+.lp-b{display:flow-root;background:#090a0a;color:#fff;--b-muted:#cccfcc;--b-card:#141719;--b-section-extra:40px}
 .lp-b .section-title{font-size:42px;font-weight:600;line-height:1.35;letter-spacing:-.005em;text-align:center;margin:0 auto}
 .b-shell{width:calc(100% - 240px);max-width:1200px;margin-inline:auto}
 .b-wide,.b-hero{width:calc(100% - 128px);max-width:1312px;margin-inline:auto;border-radius:24px}
@@ -14,7 +14,7 @@
 .b-hero-copy h1{font-size:49px;line-height:1.35;letter-spacing:-.01em;font-weight:600;min-height:0}
 .b-hero-copy>p{margin-top:44px;width:650px;font-size:18px;line-height:1.53;letter-spacing:-.005em}
 .b-hero-cta{width:395px;max-width:100%;justify-content:flex-start;min-height:60px;margin-top:40px;font-size:20px;padding:15px 22px;border-radius:8px}
-.b-about{margin-top:90px}
+.b-about{margin-top:calc(90px + var(--b-section-extra))}
 .b-about-intro{max-width:812px;margin:29px auto 0;text-align:center;font-size:18px;line-height:1.42;color:var(--b-muted)}
 .b-about-grid{display:grid;grid-template-columns:720fr 456fr;gap:24px;margin-top:72px}
 .b-office{width:100%;height:420px;object-fit:cover;border-radius:16px}
@@ -23,7 +23,7 @@
 .b-authority h3{font-size:60px;font-weight:600;line-height:1.35;letter-spacing:-.01em}
 .b-authority-assets h3{font-size:48px;font-weight:400;letter-spacing:-.005em;white-space:nowrap}
 .b-authority p{margin-top:12px;font-size:18px;line-height:1.35;color:var(--b-muted)}
-.b-fund{display:grid;grid-template-columns:minmax(0,510fr) minmax(0,638fr);gap:52px;margin-top:98px;align-items:start}
+.b-fund{display:grid;grid-template-columns:minmax(0,510fr) minmax(0,638fr);gap:52px;margin-top:calc(98px + var(--b-section-extra));align-items:start}
 .b-fund-copy h2{font-size:35px;line-height:1.35;letter-spacing:-.01em;font-weight:400}
 .b-fund-copy h3{font-size:32px;line-height:1.35;letter-spacing:-.01em;font-weight:400;margin-top:43px}
 .b-fund-copy p{font-size:18px;line-height:1.4;letter-spacing:-.005em;color:var(--b-muted);margin-top:26px}
@@ -34,7 +34,7 @@
 .lp-b .performance-periods>button,.lp-b .chart-filter>summary{font-size:11.6px}
 .lp-b .performance-filters{gap:24px}
 .lp-b .performance-caption{font-size:9.67px}
-.b-numbers{margin-top:102px}
+.b-numbers{margin-top:calc(102px + var(--b-section-extra))}
 .b-number-grid{display:grid;grid-template-columns:550fr 300fr 302fr;gap:24px;margin-top:33px}
 .b-number-grid article{min-width:0;min-height:240px;background:var(--b-card);border-radius:16px;padding:32px 28px}
 .b-number-grid h3{font-weight:400;line-height:1.35;letter-spacing:-.01em}
@@ -45,15 +45,15 @@
 .b-number-grid .b-number-fees{padding:47px 24px}
 .b-number-fees h3{font-size:32px}
 .b-number-note{max-width:100%;margin-top:32px;padding-inline:6px;font-size:16px;line-height:1.35;text-align:center;color:var(--b-muted)}
-.b-liquidity{position:relative;isolation:isolate;height:540px;margin-top:116px;overflow:hidden;background:#171410}
+.b-liquidity{position:relative;isolation:isolate;height:540px;margin-top:calc(116px + var(--b-section-extra));overflow:hidden;background:#171410}
 .b-jet{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
 .b-liquidity-copy{width:580px;padding:70px 0 48px 56px}
 .b-liquidity-copy h2{max-width:578px;font-size:49px;line-height:1.35;font-weight:400;letter-spacing:-.005em}
 .b-liquidity-copy p{max-width:397px;margin-top:28px;font-size:22.95px;line-height:1.35;color:var(--b-muted)}
 .b-liquidity-copy p+p{margin-top:18px}
-.b-audience{margin-top:80px;min-height:230px}
+.b-audience{margin-top:calc(80px + var(--b-section-extra));min-height:230px}
 .b-audience>p{max-width:952px;margin:30px auto 0;font-size:18px;line-height:1.51;color:var(--b-muted);text-align:center}
-.b-faq{margin-top:60px;min-height:914px}
+.b-faq{margin-top:calc(60px + var(--b-section-extra));min-height:914px}
 .b-faq-list{margin-top:43px}
 .b-faq-item{min-height:94px;border-bottom:1px solid #141719;padding-bottom:23px;margin:0}
 .b-faq-item+details{padding-top:16px}
@@ -64,7 +64,7 @@
 .b-faq-item summary span::after{content:"";position:absolute;inset:0;background:currentColor;transform:rotate(90deg)}
 .b-faq-item[open] summary span::after{transform:rotate(0deg)}
 .b-faq-item p{margin-top:10px;font-size:16px;line-height:1.35;color:#b8bfbd;font-weight:300;max-width:1090px}
-.b-contact{display:grid;grid-template-columns:540fr 537fr;gap:87px;padding-right:36px;margin-top:70px;align-items:start}
+.b-contact{display:grid;grid-template-columns:540fr 537fr;gap:87px;padding-right:36px;margin-top:calc(70px + var(--b-section-extra));align-items:start}
 .b-advisor{position:relative;isolation:isolate;height:600px;margin-top:4px;border-radius:16px;overflow:hidden;background:#151310}
 .b-advisor-image{width:100%;height:100%;object-fit:cover}
 .b-advisor h2{position:absolute;top:34px;left:40px;right:24px;font-size:42px;font-weight:600;line-height:1.35;letter-spacing:-.005em}
@@ -96,7 +96,7 @@
 .b-form .submit-button{width:100%;min-height:49px;font-size:17.32px;line-height:1.35;margin-top:32px;border-radius:6px;padding:12px 16px}
 .b-form .form-consent{font-size:13.86px;line-height:1.4;color:#fff;margin-top:24px;font-weight:300}
 .b-form .form-status,.b-form noscript p{font-size:14px;line-height:1.5;color:#e6c27a;margin-top:16px}
-.b-footer.site-footer{max-width:1200px;width:calc(100% - 240px);margin:149px auto 0;border-top:1px solid #141719;padding:64px 0 70px;background:transparent}
+.b-footer.site-footer{max-width:1200px;width:calc(100% - 240px);margin:calc(149px + var(--b-section-extra)) auto 0;border-top:1px solid #141719;padding:64px 0 70px;background:transparent}
 .b-footer-logo{width:52px;height:52px;object-fit:contain}
 .b-footer .footer-legal{margin-top:52px;color:var(--b-muted)}
 .lp-b .mobile-menu{color:#f6f5f1;background:#090a0a}
@@ -170,6 +170,7 @@
   .b-form .form-consent .b-desktop-break{display:none}
 }
 @media(max-width:800px){
+  .lp-b{--b-section-extra:24px}
   .b-wide,.b-hero{width:calc(100% - 40px);border-radius:22px}
   .b-shell,.b-footer.site-footer{width:calc(100% - 48px)}
   .b-desktop-break{display:none}
@@ -184,7 +185,7 @@
   .b-hero-glass{top:auto;bottom:20px;right:calc(50% - 155px);width:310px;height:310px}
   .b-hero-rim{width:190px}
   .lp-b .section-title{font-size:32px;text-wrap:balance}
-  .b-about{margin-top:80px}
+  .b-about{margin-top:calc(80px + var(--b-section-extra))}
   .b-about-intro{font-size:16px;line-height:1.5;margin-top:24px;max-width:600px}
   .b-about-grid{grid-template-columns:1fr;margin-top:38px;gap:16px}
   .b-office{height:auto;aspect-ratio:12/7}
@@ -193,12 +194,12 @@
   .b-authority h3{font-size:36px}
   .b-authority-assets h3{font-size:clamp(24px,3.7vw,36px);white-space:normal;text-wrap:balance}
   .b-authority p{font-size:16px;line-height:1.5}
-  .b-fund{grid-template-columns:1fr;margin-top:72px;gap:36px}
+  .b-fund{grid-template-columns:1fr;margin-top:calc(72px + var(--b-section-extra));gap:36px}
   .b-fund-copy h2{font-size:30px;text-wrap:balance}
   .b-fund-copy h3{font-size:28px;margin-top:34px}
   .b-fund-copy p{font-size:16px;line-height:1.5;margin-top:20px}
   .lp-b .performance-chart{margin-top:0;min-height:380px}
-  .b-numbers{margin-top:72px}
+  .b-numbers{margin-top:calc(72px + var(--b-section-extra))}
   .b-number-grid{grid-template-columns:1fr 1fr;margin-top:32px;gap:16px}
   .b-number-grid .b-number-history{grid-column:1/-1;min-height:146px}
   .b-number-grid article{min-height:180px;padding:24px}
@@ -207,21 +208,21 @@
   .b-number-fees h3{font-size:27px}
   .b-number-grid .b-number-fees{padding:32px 24px}
   .b-number-note{font-size:12px;line-height:1.5;margin-top:24px;text-align:left;padding:0}
-  .b-liquidity{height:auto;margin-top:72px;padding-bottom:310px;background:#100e0c}
+  .b-liquidity{height:auto;margin-top:calc(72px + var(--b-section-extra));padding-bottom:310px;background:#100e0c}
   .b-jet{top:auto;bottom:0;height:350px;object-fit:cover;object-position:right bottom;mask-image:linear-gradient(to bottom,transparent,#000 20%)}
   .b-liquidity-copy{width:auto;padding:36px 32px 12px}
   .b-liquidity-copy h2{font-size:32px;max-width:580px;text-wrap:balance}
   .b-liquidity-copy p{max-width:570px;font-size:17px;line-height:1.5;margin-top:24px}
   .b-liquidity-copy p+p{margin-top:18px}
-  .b-audience{margin-top:72px;min-height:0}
+  .b-audience{margin-top:calc(72px + var(--b-section-extra));min-height:0}
   .b-audience>p{font-size:16px;line-height:1.5;margin-top:24px}
-  .b-faq{margin-top:80px;min-height:0}
+  .b-faq{margin-top:calc(80px + var(--b-section-extra));min-height:0}
   .b-faq-list{margin-top:36px}
   .b-faq-item{padding-bottom:22px;min-height:0}
   .b-faq-item+details{padding-top:22px}
   .b-faq-item summary{font-size:18px;min-height:28px}
   .b-faq-item p{font-size:16px;line-height:1.5;margin-top:12px}
-  .b-contact{grid-template-columns:1fr;gap:24px;margin-top:80px}
+  .b-contact{grid-template-columns:1fr;gap:24px;margin-top:calc(80px + var(--b-section-extra))}
   .b-advisor{width:100%;height:auto;aspect-ratio:9/10;max-height:580px;margin:0}
   .b-advisor h2{font-size:32px;top:32px;left:28px}
   .b-advisor h2 .b-desktop-break{display:block}
@@ -232,7 +233,7 @@
   .b-field .custom-select__trigger,.b-multiselect>summary{padding-right:44px}
   .b-form .submit-button{min-height:52px;font-size:17px}
   .b-form .form-consent{font-size:12px;line-height:1.5}
-  .b-footer.site-footer{margin-top:80px;padding-top:40px;padding-bottom:40px}
+  .b-footer.site-footer{margin-top:calc(80px + var(--b-section-extra));padding-top:40px;padding-bottom:40px}
   .b-footer .footer-legal{margin-top:32px}
 }
 @media(max-width:450px){

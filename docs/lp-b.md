@@ -32,3 +32,7 @@ O rodapé usa o texto legal integral fornecido pelo usuário em `src/legal.json`
 `npm run build` e `npm test` cobrem ambas as páginas. A conferência da B no workspace verifica 13 larguras(320,369,393,412,609,768,1024,1100,1250,1280,1366,1440,1920), fontes reais, assets carregados, texto sem corte e medidas dos blocos principais contra o Figma. Também verifica FAQ, legal, menu, selects, múltiplas escolhas, ausência de envio, foco de teclado, filtros e tooltip persistente durante arraste touch, com rolagem vertical preservada. A passou novamente pelos testes de regressão em 7 larguras.
 
 As capturas são evidência técnica e visual de implementação, não aprovação estética ou institucional. A meta do projeto continua aguardando aprovação explícita do designer; não encerrar o plugin ou a prévia por conta própria.
+
+## Revisão de espaçamento — 11/11/2026
+
+Pedido do designer após revisar a página publicada: aumentar o respiro entre as seções. Cada transição passou a ter40px adicionais acima de800px e24px até800px, incluindo a entrada do rodapé. Os intervalos internos, dimensões dos cards, fontes, imagens e conteúdo foram preservados. Essa revisão explícita substitui apenas as coordenadas verticais do frame inicial; a composição interna continua a mesma. Conferência visual desktop/mobile e QA13larguras em work/lp-b-web-2026-11-11/qa-respiro-local.json.
