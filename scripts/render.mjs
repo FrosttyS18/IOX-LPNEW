@@ -121,7 +121,7 @@ export function renderPage(source, assets, legal, approved) {
     <section id="especialistas" class="experts container" aria-labelledby="experts-title">
       <h2 id="experts-title" class="section-title" tabindex="-1">${desktopLines(approved.expertsTitle)}</h2>
       <p class="experts-intro">${desktopLines(approved.expertsIntro)}</p>
-      <div class="expert-list">${experts.names.map((name, i) => `<figure>${image(assets[`expert${i + 1}`], 'Retrato ilustrativo de profissional.', 'expert-image', 1122, 1402)}<figcaption>${escape(name)}</figcaption></figure>`).join('')}</div>
+      <div class="expert-list">${experts.names.map((name, i) => `<figure>${image(assets[`expert${i + 1}`], `${name}, especialista de investimentos do Grupo IOX.`, 'expert-image', 540, 676)}<figcaption>${escape(name)}<span class="expert-role">${escape(experts.role)}</span></figcaption></figure>`).join('')}</div>
     </section>
 
     <section id="formulario" class="contact container" aria-labelledby="contact-title">

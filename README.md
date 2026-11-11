@@ -40,7 +40,7 @@ A prévia atual para revisão está em https://iox-lpnew.pages.dev/, no projeto 
 
 O formulário tem campos e validação, sem CRM, webhook ou envio de dados, conforme solicitado. Uma tentativa válida informa que o envio ainda não está disponível; não apresenta sucesso fictício.
 
-Os retratos usados no estudo são personagens provisórios. A identificação dessa condição fica nesta documentação, sem acrescentar legenda ao layout. O texto legal integral fornecido pelo usuário está em `src/legal.json` e substitui a versão abreviada do briefing no rodapé, com fonte de 10 px. A URL da política de privacidade ainda precisa ser fornecida para a configuração final da captação.
+Os quatro retratos foram substituídos pelas fotos reais de Hélio, Renan, Vitor e Vivian colocadas pelo designer no Figma em 10/11/2026. Os recortes e o cargo “Especialista de investimentos” seguem a seção `154:5919`; os arquivos otimizados ficam no CDN R2. O texto legal integral fornecido pelo usuário está em `src/legal.json` e substitui a versão abreviada do briefing no rodapé, com fonte de 10 px. A URL da política de privacidade ainda precisa ser fornecida para a configuração final da captação.
 
 O primeiro parágrafo legal permanece visível; os demais ficam em um controle nativo de “Ver mais” e “Ver menos”, utilizável por teclado e sem JavaScript. No mobile, o símbolo do bloco “O essencial do fundo” usa a imagem completa do CDN por meio de `picture`; o arquivo recortado do desktop é preservado.
 

@@ -125,6 +125,7 @@ h1{font-size:60px;font-weight:600;letter-spacing:-.01em;line-height:1.35;min-hei
 .expert-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;margin-top:31px}
 .expert-image{width:100%;height:auto;aspect-ratio:270/338;object-fit:cover;border-radius:14px}
 .expert-list figcaption{margin-top:20px;font-size:25px;font-weight:500;line-height:1.35;letter-spacing:-.005em}
+.expert-role{display:block;margin-top:5px;font-size:14px;font-weight:500;line-height:1.35;color:var(--muted)}
 .contact{padding-top:149px;padding-bottom:144px;display:grid;grid-template-columns:420px minmax(0,1fr);gap:60px}
 .contact-intro h2{max-width:420px;font-size:49px;font-weight:400;letter-spacing:-.005em;line-height:1.35}
 .contact-intro>p{max-width:390px;margin-top:27px;color:var(--muted);font-size:22.95px;line-height:1.35;letter-spacing:-.005em}
