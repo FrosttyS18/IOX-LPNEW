@@ -1,3 +1,5 @@
+export const privacyPolicyLink = '<a href="https://grupoiox.com.br/politica-de-privacidade/" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>';
+
 const approvedLinks = [
   ['https://iox.com.vc/investimento/fic-de-fidc-iox-90/', 'https://iox.com.vc/investimento/fic-de-fidc-iox-90/'],
   ['qiajuda@qitech.com.br', 'mailto:qiajuda@qitech.com.br'],

@@ -1,4 +1,4 @@
-import {renderLegal} from './legal-render.mjs';
+import {renderLegal,privacyPolicyLink} from './legal-render.mjs';
 import {renderPerformance} from './performance-render.mjs';
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const image = (src, alt, classes, width, height, priority = false) => `<img class="${classes}" src="${escape(src)}" alt="${escape(alt)}" width="${width}" height="${height}" ${priority ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"'}>`;
@@ -131,7 +131,7 @@ export function renderPage(source, assets, legal, approved) {
       <form id="specialist-form" method="post" action="#formulario" aria-describedby="form-consent">
         <div class="form-fields">${fieldHtml}</div>
         <button class="button button-green submit-button" type="submit" disabled>${escape(form.cta)}</button>
-        <p id="form-consent" class="form-consent">${desktopLines(form.consent)}</p>
+        <p id="form-consent" class="form-consent">${desktopLines(form.consent).replace('Política de Privacidade',privacyPolicyLink)}</p>
         <p id="form-status" class="form-status" role="status" tabindex="-1" hidden></p>
         <noscript><p class="form-status">Ative o JavaScript para preencher e continuar com este formulário.</p></noscript>
       </form>

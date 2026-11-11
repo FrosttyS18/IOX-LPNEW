@@ -166,6 +166,7 @@ html[data-input-mode="keyboard"] .field input:focus,html[data-input-mode="keyboa
 html[data-input-mode="keyboard"] .custom-select__trigger:focus{outline:3px solid #966b20;outline-offset:4px;border-color:#966b20}
 .submit-button{width:100%;margin-top:32px;font-size:22.95px;border-radius:6px}
 .form-consent{margin-top:26px;color:var(--muted);font-size:14px;font-weight:300;line-height:1.35;letter-spacing:0}
+.form-consent a{color:inherit;font-weight:500;text-decoration:underline;text-underline-offset:3px}
 .form-status{margin-top:20px;padding:16px 18px;border-radius:6px;background:var(--paper);font-size:16px;line-height:1.4;color:var(--ink)}
 .site-footer{background:var(--dark);color:#c9ccc7;padding:42px 0 80px}
 .footer-logo{width:48px;height:48px;object-fit:contain}

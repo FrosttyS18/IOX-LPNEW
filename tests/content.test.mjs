@@ -2,6 +2,17 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 
+test('A e B oferecem a política oficial no consentimento sem tirar o usuário do formulário', async () => {
+  for (const page of ['index.html','lp-b/index.html']) {
+    const html=await readFile(new URL('../dist/'+page,import.meta.url),'utf8');
+    const consent=html.match(/<p[^>]*class="form-consent"[^>]*>([\s\S]*?)<\/p>/)?.[1];
+    assert.ok(consent?.includes('href="https://grupoiox.com.br/politica-de-privacidade/"'));
+    assert.match(consent, /target="_blank"/);
+    assert.match(consent, /rel="noopener noreferrer"/);
+    assert.match(consent, />Política de Privacidade<\/a>/);
+  }
+});
+
 test('built page retains all shared source copy, fields, options and supplied legal', async () => {
   const source = JSON.parse(await readFile(new URL('../src/content.json', import.meta.url), 'utf8'));
   const legal = JSON.parse(await readFile(new URL('../src/legal.json', import.meta.url), 'utf8'));
