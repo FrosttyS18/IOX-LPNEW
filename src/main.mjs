@@ -6,7 +6,7 @@ import {enhanceNavigation} from './navigation.mjs';
 import {enhanceReveals} from './reveal.mjs';
 import {enhanceCounters} from './counters.mjs';
 import {enhancePerformance} from './performance.mjs';
-import {thankYouPath} from './confirmation.mjs';
+import {launchJourney} from './conversation/journey.mjs';
 
 enhanceEssentials(document.querySelector('.essentials-list'));
 
@@ -55,7 +55,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   if (!customSelects.reportValidity()) return;
   if (!form.reportValidity()) return;
-  window.location.assign(thankYouPath('a'));
+  launchJourney(form,'a');
 });
 
 submit.disabled = false;

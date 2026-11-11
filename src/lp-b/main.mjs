@@ -1,5 +1,5 @@
 import {upgradeSelects} from '../select.mjs';
-import {thankYouPath} from '../confirmation.mjs';
+import {launchJourney} from '../conversation/journey.mjs';
 import {normalizeExclusiveSelection} from '../investment-selection.mjs';
 import {enhanceNavigation} from '../navigation.mjs';
 import {enhanceReveals} from '../reveal.mjs';
@@ -58,6 +58,6 @@ form.addEventListener('submit', event => {
   }
   if (!form.reportValidity()) return;
   multiple.open = false;
-  window.location.assign(thankYouPath('b'));
+  launchJourney(form,'b');
 });
 form.querySelector('button[type="submit"]').disabled = false;

@@ -38,7 +38,7 @@ Esses comandos preparam o manifesto de arquivos e um Worker com o HTML, CSS e Ja
 
 A prévia atual para revisão está em https://iox-lpnew.pages.dev/, no projeto Cloudflare Pages `iox-lpnew` da conta Frostty. A publicação de 10/11/2026 usa o bundle preparado em `output/deployment/worker.mjs`, enviado como `_worker.js` no modo avançado do Pages. O endereço antigo em `workers.dev` permanece na versão anterior. Não há domínio personalizado nem publicação automática por Git.
 
-O formulário tem campos e validação, sem CRM, webhook ou envio de dados, conforme solicitado. Uma tentativa válida informa que o envio ainda não está disponível; não apresenta sucesso fictício.
+Os formulários A/B têm campos e validação e abrem a mesma jornada de nove telas, conforme a revisão do Léo de 11/11. Não há CRM, webhook ou envio real. A jornada mantém o contato apenas na memória da visita, personaliza a tela final e não apresenta agenda. O funcionamento atual e a regra de saída estão em `docs/formulario-p3-p4.md`.
 
 Os quatro retratos foram substituídos pelas fotos reais de Hélio, Renan, Vitor e Vivian colocadas pelo designer no Figma em 10/11/2026. Os recortes e o cargo “Especialista de investimentos” seguem a seção `154:5919`; os arquivos otimizados ficam no CDN R2. O texto legal integral fornecido pelo usuário está em `src/legal.json` e substitui a versão abreviada do briefing no rodapé, com fonte de 10 px. A URL da política de privacidade ainda precisa ser fornecida para a configuração final da captação.
 
