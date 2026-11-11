@@ -22,12 +22,21 @@ const multiple = form.querySelector('.b-multiselect');
 const choices = [...multiple.querySelectorAll('input')];
 const multipleError = form.querySelector('.b-multi-error');
 const multipleValue = multiple.querySelector('[data-multiple-value]');
+function positionMultiple() {
+  if (!multiple.open) return;
+  const rect = multiple.querySelector('summary').getBoundingClientRect();
+  const below = window.innerHeight - rect.bottom;
+  const height = multiple.querySelector('.b-multi-popup').getBoundingClientRect().height;
+  multiple.dataset.placement = below < height && rect.top > below ? 'above' : 'below';
+}
+multiple.addEventListener('toggle', positionMultiple);
 
 multiple.addEventListener('change', event => {
   const selected = normalizeExclusiveSelection(choices.filter(input=>input.checked).map(input=>input.value),event.target.value,multiple.dataset.exclusiveValue);
   for (const input of choices) input.checked = selected.includes(input.value);
   const checked = choices.filter(input => input.checked);
   multipleValue.textContent = checked.length ? checked.map(input => input.parentElement.textContent.trim()).join(', ') : 'Selecione uma ou mais opções';
+  positionMultiple();
   if (checked.length) {
     multipleError.hidden = true;
     multiple.querySelector('summary').removeAttribute('aria-invalid');
@@ -39,9 +48,13 @@ multiple.addEventListener('keydown', event => {
   multiple.open = false;
   multiple.querySelector('summary').focus();
 });
+multiple.querySelector('.b-multi-done').addEventListener('click', () => {
+  multiple.open = false;
+  multiple.querySelector('summary').focus({preventScroll:true});
+});
 document.addEventListener('pointerdown', event => {
   if (!multiple.contains(event.target)) multiple.open = false;
-});
+}, true);
 phone.addEventListener('input', () => {
   const length = phone.value.replace(/\D/g, '').length;
   phone.setCustomValidity(length >= 10 && length <= 15 ? '' : 'Informe um telefone válido, com DDD.');

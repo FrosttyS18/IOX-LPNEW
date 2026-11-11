@@ -51,6 +51,20 @@ export function upgradeSelects(form) {
     if (multiple) list.setAttribute('aria-multiselectable', 'true');
     if (trigger.hasAttribute('aria-labelledby')) list.setAttribute('aria-labelledby', trigger.getAttribute('aria-labelledby'));
     list.hidden = true;
+    const popup = multiple ? document.createElement('span') : list;
+    let done;
+    if (multiple) {
+      popup.className = 'custom-select__popup';
+      popup.hidden = true;
+      const actions = document.createElement('span');
+      actions.className = 'custom-select__actions';
+      done = document.createElement('button');
+      done.type = 'button';
+      done.className = 'custom-select__done';
+      done.textContent = 'Concluir';
+      actions.append(done);
+      popup.append(list, actions);
+    }
     const error = document.createElement('span');
     error.id = `${base}-error`;
     error.className = 'custom-select__error';
@@ -128,6 +142,7 @@ export function upgradeSelects(form) {
       if (accept && !multiple) commit();
       open = false;
       list.hidden = true;
+      popup.hidden = true;
       delete wrapper.dataset.open;
       trigger.setAttribute('aria-expanded', 'false');
       trigger.removeAttribute('aria-activedescendant');
@@ -139,11 +154,12 @@ export function upgradeSelects(form) {
       for (const field of fields) field.close(true);
       open = true;
       list.hidden = false;
+      popup.hidden = false;
       wrapper.dataset.open = 'true';
       trigger.setAttribute('aria-expanded', 'true');
       const rect = trigger.getBoundingClientRect();
       const below = window.innerHeight - rect.bottom;
-      const height = Math.min(list.getBoundingClientRect().height, 320);
+      const height = popup.getBoundingClientRect().height;
       wrapper.dataset.placement = below < height && rect.top > below ? 'above' : 'below';
       markActive(Math.max(0, items.findIndex(item => item.option.selected)));
     }
@@ -166,10 +182,29 @@ export function upgradeSelects(form) {
     }
 
     trigger.addEventListener('click', () => open ? close() : show());
-    trigger.addEventListener('blur', () => close(true));
+    wrapper.addEventListener('focusout', event => {
+      if (!wrapper.contains(event.relatedTarget)) close(true);
+    });
+    if (done) {
+      done.addEventListener('click', () => {
+        close();
+        trigger.focus({preventScroll:true});
+      });
+      done.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        event.preventDefault();
+        close();
+        trigger.focus({preventScroll:true});
+      });
+    }
     trigger.addEventListener('keydown', event => {
       const key = event.key;
       if (key === 'Tab') {
+        if (open && multiple && !event.shiftKey) {
+          event.preventDefault();
+          done.focus({preventScroll:true});
+          return;
+        }
         close(true);
         return;
       }
@@ -211,13 +246,24 @@ export function upgradeSelects(form) {
       });
     }
     select.addEventListener('change', sync);
-    wrapper.append(trigger, list, error);
+    wrapper.append(trigger, popup, error);
     select.after(wrapper);
-    for (const label of labels) label.htmlFor = trigger.id;
+    for (const label of labels) {
+      label.htmlFor = trigger.id;
+      label.addEventListener('pointerdown', event => {
+        if (open) event.preventDefault();
+      });
+      label.addEventListener('click', event => {
+        event.preventDefault();
+        trigger.focus({preventScroll:true});
+        if (open) close();
+        else show();
+      });
+    }
     select.required = false;
     select.hidden = true;
     sync();
-    fields.push({select, trigger, wrapper, close, reset() {close(); clearError(); sync();}, validate() {
+    fields.push({select, trigger, wrapper, labels, close, reset() {close(); clearError(); sync();}, validate() {
       const valid = !required || select.disabled || (multiple ? items.some(item=>item.option.selected) : select.value !== '');
       if (valid) clearError();
       else {
@@ -231,8 +277,8 @@ export function upgradeSelects(form) {
   }
 
   document.addEventListener('pointerdown', event => {
-    for (const field of fields) if (!field.wrapper.contains(event.target)) field.close();
-  });
+    for (const field of fields) if (!field.wrapper.contains(event.target) && !field.labels.some(label=>label.contains(event.target))) field.close();
+  }, true);
   form.addEventListener('reset', () => window.setTimeout(() => fields.forEach(field => field.reset()), 0));
   const controller = {reportValidity() {
     const invalid = fields.filter(field => !field.validate());
