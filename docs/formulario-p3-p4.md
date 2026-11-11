@@ -35,3 +35,11 @@ Pedido posterior: o calendário desaparece após confirmar e o mesmo diálogo pa
 ## Publicação e conferência final — 11/11/2026
 
 Implementação enviada ao origin/main no commit36d996fcb8c27b3e490795ed7e6d90f851f91fc2. Cloudflare Pages83469e2c-e2f9-4918-870d-24121e369ac7 com sucesso e canônico confirmado. P3em/obrigado/, P4em/conversa/. QA pública:52combinações de etapas/larguras,2fluxos completosP4,4fluxos dos formuláriosA/Bem393/1440 e9viewports daagenda. Nenhum erroJS,POST,storageouoverflow. Calendário some ao confirmar; check animado e data/hora conferidos no mobile público. Em1920×1080/917/852 aP3não gera rolagem vertical indevida. Nenhuma integração real conectada. LPs A/B e Figma preservados fora do retorno solicitado.
+
+## Paridade e retorno após concluir — 11/11/2026
+
+A auditoria identificou a seleção simples da A e a falta de exclusividade da B. Alinhadas as três apresentações: onde investe aceita várias classes; Ainda não invisto desmarca as demais e é desmarcado ao escolher uma classe. A mantém o dropdown e o visual inicial aprovado; o painel aberto indica seleções e permanece aberto para marcar várias. Escape, Tab, clique fora ou o botão do campo fecham. Regra compartilhada em src/investment-selection.mjs, usada pelo select da A, checkboxes da B e modelo da P4. Não há alterações no Figma.
+
+Testes locais de paridade em9larguras, teclado, toque real, limpeza e5classes simultâneas passaram. Capturas do formulário A vazio foram byte-idênticas à versão pública anterior em393/1440/1920; root conferiu também o painel aberto. Regressão B13larguras e quatro fluxos A/B até P3 passaram. Build22testes.
+
+Pedido posterior do designer: Concluir na confirmação de horário deve voltar à LP. Agora usa origem=a/b com destino restrito a / ou /lp-b/; origem desconhecida volta à A. Fechar/X/Escape continuam apenas fechando o modal. O fluxo de retorno foi reproduzido falhando antes da correção e passou para A, B e origem inválida.

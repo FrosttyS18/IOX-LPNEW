@@ -1,4 +1,5 @@
 import {investedOptions,investmentOptions,intentionOptions,timeOptions} from './content.mjs';
+import {normalizeExclusiveSelection} from '../investment-selection.mjs';
 export {returnPath,thankYouPath} from '../confirmation.mjs';
 
 const includes=(options,value)=>options.some(option=>option.value===value);
@@ -30,6 +31,5 @@ export function firstIncompleteStep(answers){
 
 export function normalizeInvestments(values,changedValue){
   if(!Array.isArray(values)||values.some(value=>!includes(investmentOptions,value)))throw new TypeError('Opções de investimento inválidas.');
-  if(changedValue==='none'&&values.includes('none'))return ['none'];
-  return [...new Set(values)].filter(value=>value!=='none'||values.length===1);
+  return normalizeExclusiveSelection(values,changedValue,'none');
 }

@@ -24,7 +24,7 @@ for (const key of required) {
 await mkdir(new URL('dist/', root), {recursive:true});
 const html = renderPage(source, assets, legal, approved);
 const css = await readFile(new URL('src/styles.css', root), 'utf8');
-const runtimeFiles = ['main.mjs','hero.mjs','select.mjs','essentials.mjs','navigation.mjs','reveal.mjs','counters.mjs','performance.mjs','performance-model.mjs','performance-data.mjs','performance.css','confirmation.mjs'];
+const runtimeFiles = ['main.mjs','hero.mjs','select.mjs','essentials.mjs','navigation.mjs','reveal.mjs','counters.mjs','performance.mjs','performance-model.mjs','performance-data.mjs','performance.css','confirmation.mjs','investment-selection.mjs'];
 const runtime = new Map(await Promise.all(runtimeFiles.map(async file => [file, await readFile(new URL(`src/${file}`, root), 'utf8')])));
 const revision = createHash('sha256').update(html).update(css).update([...runtime.values()].join('\n')).digest('hex').slice(0,12);
 await writeFile(new URL('dist/index.html', root), html.replace(/((?:href|src)="\/)(styles\.css|performance\.css|main\.mjs)(")/g, `$1$2?v=${revision}$3`));

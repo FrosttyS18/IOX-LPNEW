@@ -1,4 +1,5 @@
 import {demoDays,demoTimes,selectionLabel} from './agenda-model.mjs';
+import {returnPath} from '../confirmation.mjs';
 
 export function enhanceDemoAgenda(){
   const trigger=document.querySelector('[data-agenda]');
@@ -31,7 +32,7 @@ export function enhanceDemoAgenda(){
     dialog.showModal();
   });
   dialog.querySelector('[data-agenda-close]').addEventListener('click',()=>dialog.close());
-  dialog.querySelector('[data-agenda-done]').addEventListener('click',()=>dialog.close());
+  dialog.querySelector('[data-agenda-done]').addEventListener('click',()=>window.location.assign(returnPath(new URLSearchParams(window.location.search).get('origem'))));
   dialog.addEventListener('click',event=>{if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)dialog.close();}});
   form.addEventListener('change',()=>{
     submit.disabled=!form.querySelector('input[name="agenda-day"]:checked')||!form.querySelector('input[name="agenda-time"]:checked');

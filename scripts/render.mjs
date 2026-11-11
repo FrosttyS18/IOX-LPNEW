@@ -20,7 +20,9 @@ export function renderPage(source, assets, legal, approved) {
     const label = `<label for="${fieldId}">${escape(field.label)}</label>`;
     let control;
     if (field.options) {
-      control = `<span class="select-shell"><select id="${fieldId}" name="${field.id}" required><option value="" disabled selected>Selecione</option>${field.options.map((value, i) => `<option value="${i + 1}">${escape(value)}</option>`).join('')}</select></span>`;
+      const multiple = field.id === 'currentInvestments';
+      const mode = multiple ? ` multiple data-exclusive-value="${field.options.indexOf('Ainda não invisto') + 1}"` : '';
+      control = `<span class="select-shell"><select id="${fieldId}" name="${field.id}" required${mode}><option value="" disabled${multiple ? '' : ' selected'}>Selecione</option>${field.options.map((value, i) => `<option value="${i + 1}">${escape(value)}</option>`).join('')}</select></span>`;
     } else {
       const configs = {name: ['text','name','100','Digite seu nome'], email: ['email','email','254','seu@email.com'], phone: ['tel','tel','22','(99) - 00000-0000']};
       const [type, autocomplete, max, placeholder] = configs[field.id];

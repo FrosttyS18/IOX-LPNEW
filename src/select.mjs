@@ -1,3 +1,5 @@
+import {normalizeExclusiveSelection} from './investment-selection.mjs';
+
 const upgradedForms = new WeakMap();
 
 export function upgradeSelects(form) {
@@ -7,13 +9,15 @@ export function upgradeSelects(form) {
   const fields = [];
   const normalize = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
 
-  for (const select of form.querySelectorAll('select:not([multiple])')) {
+  for (const select of form.querySelectorAll('select')) {
     const required = select.required;
+    const multiple = select.multiple;
     const base = select.id || `custom-select-${fields.length + 1}`;
     const labels = Array.from(select.labels || []);
     const description = select.getAttribute('aria-describedby');
     const wrapper = document.createElement('span');
     wrapper.className = 'custom-select';
+    if (multiple) wrapper.dataset.multiple = 'true';
     const trigger = document.createElement('button');
     trigger.type = 'button';
     trigger.id = `${base}-trigger`;
@@ -44,13 +48,14 @@ export function upgradeSelects(form) {
     list.id = `${base}-list`;
     list.className = 'custom-select__list';
     list.setAttribute('role', 'listbox');
+    if (multiple) list.setAttribute('aria-multiselectable', 'true');
     if (trigger.hasAttribute('aria-labelledby')) list.setAttribute('aria-labelledby', trigger.getAttribute('aria-labelledby'));
     list.hidden = true;
     const error = document.createElement('span');
     error.id = `${base}-error`;
     error.className = 'custom-select__error';
     error.setAttribute('role', 'alert');
-    error.textContent = 'Selecione uma opção.';
+    error.textContent = multiple ? 'Selecione ao menos uma opção.' : 'Selecione uma opção.';
     error.hidden = true;
     const items = Array.from(select.options)
       .filter(option => !option.disabled && !option.hidden && !option.parentElement.disabled)
@@ -77,10 +82,11 @@ export function upgradeSelects(form) {
     }
 
     function sync() {
-      value.textContent = select.selectedOptions[0]?.textContent || '';
-      wrapper.dataset.placeholder = String(!select.value);
+      const selected = items.filter(item=>item.option.selected);
+      value.textContent = multiple ? selected.map(item=>item.option.textContent).join(', ') || select.options[0]?.textContent || '' : select.selectedOptions[0]?.textContent || '';
+      wrapper.dataset.placeholder = String(multiple ? selected.length === 0 : !select.value);
       for (const item of items) item.element.setAttribute('aria-selected', String(item.option.selected));
-      if (select.value) clearError();
+      if (multiple ? selected.length > 0 : select.value) clearError();
     }
 
     function markActive(index) {
@@ -97,6 +103,17 @@ export function upgradeSelects(form) {
 
     function commit() {
       if (!items[active]) return;
+      if (multiple) {
+        items[active].option.selected = !items[active].option.selected;
+        if (select.dataset.exclusiveValue) {
+          const selected = normalizeExclusiveSelection(items.filter(item=>item.option.selected).map(item=>item.option.value),items[active].option.value,select.dataset.exclusiveValue);
+          for (const item of items) item.option.selected = selected.includes(item.option.value);
+        }
+        sync();
+        select.dispatchEvent(new window.Event('input', {bubbles:true}));
+        select.dispatchEvent(new window.Event('change', {bubbles:true}));
+        return;
+      }
       const previous = select.selectedIndex;
       select.selectedIndex = items[active].option.index;
       sync();
@@ -108,7 +125,7 @@ export function upgradeSelects(form) {
 
     function close(accept = false) {
       if (!open) return;
-      if (accept) commit();
+      if (accept && !multiple) commit();
       open = false;
       list.hidden = true;
       delete wrapper.dataset.open;
@@ -163,7 +180,8 @@ export function upgradeSelects(form) {
       }
       if (key === 'Enter' || key === ' ') {
         event.preventDefault();
-        if (open) close(true);
+        if (open && multiple) commit();
+        else if (open) close(true);
         else show();
         return;
       }
@@ -187,7 +205,8 @@ export function upgradeSelects(form) {
       item.element.addEventListener('pointermove', () => markActive(index));
       item.element.addEventListener('click', () => {
         markActive(index);
-        close(true);
+        if (multiple) commit();
+        else close(true);
         trigger.focus({preventScroll: true});
       });
     }
@@ -199,7 +218,7 @@ export function upgradeSelects(form) {
     select.hidden = true;
     sync();
     fields.push({select, trigger, wrapper, close, reset() {close(); clearError(); sync();}, validate() {
-      const valid = !required || select.disabled || select.value !== '';
+      const valid = !required || select.disabled || (multiple ? items.some(item=>item.option.selected) : select.value !== '');
       if (valid) clearError();
       else {
         error.hidden = false;

@@ -1,5 +1,6 @@
 import {upgradeSelects} from '../select.mjs';
 import {thankYouPath} from '../confirmation.mjs';
+import {normalizeExclusiveSelection} from '../investment-selection.mjs';
 import {enhanceNavigation} from '../navigation.mjs';
 import {enhanceReveals} from '../reveal.mjs';
 import {enhancePerformance} from '../performance.mjs';
@@ -22,7 +23,9 @@ const choices = [...multiple.querySelectorAll('input')];
 const multipleError = form.querySelector('.b-multi-error');
 const multipleValue = multiple.querySelector('[data-multiple-value]');
 
-multiple.addEventListener('change', () => {
+multiple.addEventListener('change', event => {
+  const selected = normalizeExclusiveSelection(choices.filter(input=>input.checked).map(input=>input.value),event.target.value,multiple.dataset.exclusiveValue);
+  for (const input of choices) input.checked = selected.includes(input.value);
   const checked = choices.filter(input => input.checked);
   multipleValue.textContent = checked.length ? checked.map(input => input.parentElement.textContent.trim()).join(', ') : 'Selecione uma ou mais opções';
   if (checked.length) {
