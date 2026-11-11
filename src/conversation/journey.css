@@ -20,7 +20,11 @@
 .j-progress-track{height:4px;margin-top:13px;background:#dde2de;border-radius:2px}
 .j-progress-track>span{display:block;height:100%;background:#1f9d5c;border-radius:2px;transition:width .25s ease}
 .j-form{display:flex;flex:1;flex-direction:column;min-height:0;margin-top:54px}
-.j-content{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scroll-padding-block:12px;scrollbar-width:thin}
+.j-content{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scroll-padding-block:12px;scrollbar-width:thin;scrollbar-color:#b7c0ba transparent}
+@supports selector(::-webkit-scrollbar){.j-content{scrollbar-width:auto}}
+.j-content::-webkit-scrollbar{width:3px}
+.j-content::-webkit-scrollbar-thumb{background:#b7c0ba;border-radius:3px}
+.j-content::-webkit-scrollbar-track{background:transparent}
 .j-content :focus-visible{outline-offset:-2px}
 .j-keep{white-space:nowrap}
 .j-person-name{display:inline-block;white-space:nowrap;overflow-wrap:normal;word-break:normal}
@@ -99,34 +103,36 @@
  .j-form[data-step="4"] .j-choice{min-height:48px;padding-block:10px}
 }
 @media(max-width:800px){
- .j-shell{display:block;padding:0 24px max(24px,env(safe-area-inset-bottom))}
+ .j-shell{display:block;padding:0 24px max(16px,env(safe-area-inset-bottom))}
  .j-panel{display:none}
  .j-header{position:relative;inset:auto;justify-content:space-between;padding-top:24px}
- .j-mobile-logo{display:block;width:48px;height:48px;padding:8px;object-fit:contain;background:#090a0a;border-radius:10px}
+ .j-mobile-logo{display:block;width:40px;height:40px;object-fit:contain}
  .j-return{font-size:14px!important;gap:8px}
- .j-main{height:calc(100% - 72px);padding-top:36px;padding-bottom:0}
+ .j-main{height:calc(100% - 64px);padding-top:24px;padding-bottom:0}
  .j-progress-label{font-size:14px;padding-right:8px}
  .j-progress-track{margin-top:13px}
- .j-form{margin-top:46px}
+ .j-form{margin-top:28px}
  .j-title{font-size:25px;font-weight:500;line-height:1.35;letter-spacing:-.005em}
- .j-body{margin-top:27.5px;font-size:16px;line-height:1.35}
- .j-requirement-label{margin-top:32px;font-size:16px}
- .j-requirements{gap:20px;margin-top:22px;font-size:16px}
+ .j-body{margin-top:20px;font-size:16px;line-height:1.35}
+ .j-requirement-label{margin-top:24px;font-size:16px}
+ .j-requirements{gap:14px;margin-top:16px;font-size:16px}
  .j-requirements li{gap:10px}
  .j-requirements svg{width:20px;height:20px}
  .j-options{grid-template-columns:minmax(0,1fr);gap:12px}
- .j-form:is([data-step="2"],[data-step="5"],[data-step="7"],[data-step="8"]) .j-title-row{min-height:84px}
- .j-fieldset{margin-top:36px}
- .j-fieldset legend{margin-bottom:22px;font-size:18px;letter-spacing:-.005em}
- .j-choice,.j-form[data-step="4"] .j-choice{min-height:64px;padding:14px 18px;font-size:16px;gap:14px}
+ .j-form:is([data-step="2"],[data-step="5"],[data-step="7"],[data-step="8"]) .j-title-row{min-height:0}
+ .j-fieldset{margin-top:24px}
+ .j-fieldset legend{margin-bottom:16px;font-size:18px;letter-spacing:-.005em}
+ .j-choice,.j-form[data-step="4"] .j-choice{min-height:56px;padding:12px 14px;font-size:16px;gap:12px}
  .j-choice input{width:20px;height:20px;flex-basis:20px}
- .j-form[data-step="3"] .j-fieldset{margin-top:31.2px}
- .j-form[data-step="3"] .j-fieldset legend{margin-bottom:27.4px}
- .j-form[data-step="4"] .j-fieldset{margin-top:27.5px}
- .j-form[data-step="4"] .j-fieldset legend{margin-bottom:23.7px}
- .j-form[data-step="4"][data-profile-part="1"] .j-fieldset{margin-top:29.5px}
- .j-form[data-step="4"][data-profile-part="1"] .j-fieldset legend{margin-bottom:25.4px}
- .j-actions{padding-top:40px}
+ .j-form[data-step="3"] .j-fieldset{margin-top:24px}
+ .j-form[data-step="3"] .j-fieldset legend{margin-bottom:16px}
+ .j-form[data-step="4"] .j-fieldset{margin-top:24px}
+ .j-form[data-step="4"] .j-fieldset legend{margin-bottom:16px}
+ .j-form[data-step="4"][data-profile-part="1"] .j-fieldset{margin-top:24px}
+ .j-form[data-step="4"][data-profile-part="1"] .j-fieldset legend{margin-bottom:16px}
+ .j-actions{padding-top:16px}
+ .j-form:is([data-step="2"],[data-step="3"],[data-step="5"]) .j-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .j-next{min-height:48px;padding-block:12px}
  .j-next{width:170px;font-size:16px!important}
  .j-back{font-size:14px!important}
  .j-form[data-step="1"] .j-next{width:100%;font-size:16px!important}
@@ -140,6 +146,6 @@
  .j-dialog[data-step="9"] .j-body,.j-dialog[data-step="exit"] .j-body{margin-top:26px}
  .j-success{width:42px;height:42px;flex-basis:42px}
  .j-title-row{gap:12px}
- .j-dialog[data-step="6"] .j-actions{padding-top:36px}
+ .j-dialog[data-step="6"] .j-actions{padding-top:16px}
 }
 @media(prefers-reduced-motion:reduce){.j-progress-track>span{transition:none}.j-success,.j-success path{animation:none}.j-success path{stroke-dashoffset:0}}

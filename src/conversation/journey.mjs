@@ -32,7 +32,7 @@ export async function launchJourney(form,source){
   form.querySelectorAll('.j-load-error').forEach(node=>node.remove());
   trigger.disabled=false;
   const dialog=document.createElement('dialog');dialog.className='j-dialog';dialog.setAttribute('aria-labelledby','j-title');
-  dialog.innerHTML=`<div class="j-shell"><aside class="j-panel" aria-label="Fundo IOX 90"><img src="${journeyAssets.panel}" width="720" height="1760" alt="" decoding="async"></aside><header class="j-header"><img class="j-mobile-logo" src="${journeyAssets.logo}" width="48" height="48" alt="Grupo IOX"><button class="j-return" type="button">${backIcon}<span>Voltar para o site</span></button></header><div class="j-main"></div></div>`;
+  dialog.innerHTML=`<div class="j-shell"><aside class="j-panel" aria-label="Fundo IOX 90"><img src="${journeyAssets.panel}" width="720" height="1760" alt="" decoding="async"></aside><header class="j-header"><img class="j-mobile-logo" src="${journeyAssets.logo}" width="40" height="40" alt="Grupo IOX"><button class="j-return" type="button">${backIcon}<span>Voltar para o site</span></button></header><div class="j-main"></div></div>`;
   let state={step:1,profilePart:0};
   const answers={};
   const mobile=matchMedia('(max-width:800px)');

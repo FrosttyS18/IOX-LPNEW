@@ -2,6 +2,9 @@
 
 ## Estado vigente — implementação autorizada em 11/11/2026
 
+**Revisão mobile solicitada em11/11:** logo branco em caixa preta removido. SVG preto com fundo transparente extraído diretamente das quatro curvas/clips vetoriais da página9 do Manual de Branding - IOX_compressed.pdf oficial (Dropbox id:OcGwBJ7cq74AAAAAAAAHCw), sem reconstrução por IA ou traçado de bitmap. Fonte versionada em assets/iox-logo-preto.svg e publicação no CDN próprio,1927bytes. Mobile usa40px sem padding/fundo. Sim/Não das etapas2/3/5 lado a lado,56px de altura; rodapé mantém ações visíveis com16px de respiro e botão48px. Cabeçalho/progresso/formulário tiveram intervalos compactados; grupos de palavras longos deixaram de ser nowrap, preservando IOX90 e valores. Scroll interno intencional só quando necessário, barra Chrome3px discreta e fallback thin. Desktop e copy/regras preservados. QA50estados em320/360/393/412/1738;21após refinamento;28testes. Renders1/3/6/8/9mobile conferidos. Evidências qa-compacto-metricas.json,qa-fixed-actions-compacto.json e fixed-compacto-* emwork/jornada-iox90-v2-2026-11-11/.
+
+
 **Auditoria de conteúdo:** 43 trechos e opções dos módulos atuais comparados à copy integral do Léo, sem divergências. Evidência: `work/jornada-iox90-v2-2026-11-11/auditoria-copy-codigo-atual.json`. O formulário e a jornada já estão publicados para revisão. Permanecem fora desta entrega as integrações de CRM/Meta/envio real, conforme instrução do designer; revisão humana continua pendente.
 
 **Publicação atual:** c8600016d025964e15b4bc78ca85c6b90e4b8416 no GitHub; Pages f1f582b8-32e3-4ba0-8159-eb3956abbb19, sucesso/canônico. Inclui rodapé fixo e painel proporcional de7ab79d6 e apresentação dos dois primeiros nomes. Arquivos públicos conferidos contra dist, agenda404. Registros abaixo de outras publicações são históricos.

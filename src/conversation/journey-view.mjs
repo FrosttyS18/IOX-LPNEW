@@ -9,7 +9,7 @@ const checkIcon='<svg class="j-success" viewBox="0 0 52 52" aria-hidden="true"><
 
 function formatted(text,mobile){
   const safe=escapeHtml(mobile?text:journeyLines.desktop[text]||text);
-  if(mobile)return safe.replace(/IOX 90|R\$\s\d+(?:[.,]\d+)*(?:\s(?:milhão|milhões|mil))?|90 dias|aporte inicial|aplicações financeiras/g,part=>`<span class="j-keep">${part}</span>`);
+  if(mobile)return safe.replace(/IOX 90|R\$\s\d+(?:[.,]\d+)*(?:\s(?:milhão|milhões|mil))?|90 dias/g,part=>`<span class="j-keep">${part}</span>`);
   return safe.replaceAll('\n',' <br class="j-line-break">');
 }
 function choices(key,legend,answers,errors,mobile){
