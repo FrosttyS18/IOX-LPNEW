@@ -92,7 +92,7 @@
 .b-multiselect[data-placement="above"] .b-multi-popup{top:auto;bottom:calc(100% + 8px)}
 .b-multi-options{padding:8px;max-height:min(240px,32dvh);overflow-y:auto;overscroll-behavior:contain}
 .b-multi-actions{padding:8px}
-.b-multi-done{display:block;width:100%;min-height:44px;padding:10px 16px;border:0;border-radius:6px;background:#e6c27a;color:#090a0a;font:500 16px/1.35 'Plus Jakarta Sans',sans-serif;cursor:pointer}
+.b-multi-done{display:block;width:100%;min-height:44px;padding:10px 16px;border:0;border-radius:6px;background:#000;color:#fff;font:500 16px/1.35 'Plus Jakarta Sans',sans-serif;cursor:pointer}
 .b-multi-options label{display:flex;align-items:center;gap:12px;min-height:44px;margin:0;padding:10px;font-size:16px;line-height:1.4;border-radius:5px;cursor:pointer}
 .b-multi-options label:hover{background:#353b37}
 .b-multi-options input{width:17px;height:17px;min-width:17px;min-height:0;margin:0;padding:0;accent-color:#e6c27a;flex:0 0 17px}
