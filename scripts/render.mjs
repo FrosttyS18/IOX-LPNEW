@@ -128,7 +128,7 @@ export function renderPage(source, assets, legal, approved) {
       <div class="contact-intro"><h2 id="contact-title" tabindex="-1">${desktopLines(approved.contactTitle)}</h2><p>${desktopLines(approved.contactIntro)}</p><p class="contact-proof">${desktopLines(approved.contactProof)}</p></div>
       <form id="specialist-form" method="post" action="#formulario" aria-describedby="form-consent">
         <div class="form-fields">${fieldHtml}</div>
-        <button class="button button-gold submit-button" type="submit" disabled>${escape(form.cta)}</button>
+        <button class="button button-green submit-button" type="submit" disabled>${escape(form.cta)}</button>
         <p id="form-consent" class="form-consent">${desktopLines(form.consent)}</p>
         <p id="form-status" class="form-status" role="status" tabindex="-1" hidden></p>
         <noscript><p class="form-status">Ative o JavaScript para usar a validação deste formulário. O envio ainda não está disponível.</p></noscript>

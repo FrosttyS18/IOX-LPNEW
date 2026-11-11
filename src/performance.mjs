@@ -147,10 +147,15 @@ export function enhancePerformance(chart) {
     const index = points.reduce((nearest, point, i) => Math.abs(point[0] - target) < Math.abs(points[nearest][0] - target) ? i : nearest, 0);
     inspect(index, {x:event.clientX - box.left, y:event.clientY - box.top});
   };
+  plot.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'mouse') return;
+    plot.setPointerCapture(event.pointerId);
+    inspectPointer(event);
+  });
   plot.addEventListener('pointermove', inspectPointer);
   plot.addEventListener('pointerup', event => {if (event.pointerType !== 'mouse') inspectPointer(event);});
   plot.addEventListener('pointerleave', event => {if (event.pointerType === 'mouse') hideInspection();});
-  plot.addEventListener('pointercancel', hideInspection);
+  plot.addEventListener('pointercancel', event => {if (event.pointerType === 'mouse') hideInspection();});
   plot.addEventListener('blur', hideInspection);
   plot.addEventListener('keydown', event => {
     if (!result || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
