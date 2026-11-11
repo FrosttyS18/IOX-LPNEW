@@ -1,6 +1,8 @@
-# LPs A/B e jornada — publicação e próxima revisão
+# LPs A/B e jornada — entrega e continuidade
 
-## Estado vigente — implementação autorizada em 11/11/2026
+## Estado vigente — entrega encerrada pelo designer em 11/11/2026
+
+O designer declarou a entrega concluída e informou que Léo levará o material à reunião com os clientes. Encerramento da meta autorizado; aprovação institucional e resultado da reunião ainda não informados. Publicação vigente conferida em sucesso, sem alteração de código após os testes registrados. Manter plugin/Talk, ponte3055 e prévia4184 abertos, conforme instrução persistente. CRM e envio real continuam excluídos desta fase; revisão da lâmina foi adiada pelo designer. Os registros de revisão pendente abaixo são históricos.
 
 **Estabilidade da altura e privacidade —11/11:** designer confirmou paridade de todos os ajustes de formulário A/B. Política de Privacidade agora é link sublinhado para https://grupoiox.com.br/politica-de-privacidade/, destino conferido no rodapé institucional; nova aba preserva formulário. Mesmo anchor compartilhado nos dois renderizadores.
 
