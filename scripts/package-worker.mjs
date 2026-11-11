@@ -9,12 +9,13 @@ for (const [path, entry] of Object.entries(payload.manifest)) {
 }
 files['/'] = files['/index.html'];
 files['/lp-b/'] = files['/lp-b/index.html'];
+files['/obrigado/'] = files['/obrigado/index.html'];
 const code = `const files = ${JSON.stringify(files)};
 export default {
   async fetch(request) {
     if (!['GET', 'HEAD'].includes(request.method)) return new Response('Método não permitido', {status:405, headers:{Allow:'GET, HEAD'}});
     const url = new URL(request.url);
-    if (url.pathname === '/lp-b') {url.pathname = '/lp-b/'; return Response.redirect(url.href, 308);}
+    if (['/lp-b','/obrigado'].includes(url.pathname)) {url.pathname += '/'; return Response.redirect(url.href, 308);}
     const file = files[url.pathname];
     if (!file) return new Response('Página não encontrada', {status:404, headers:{'Content-Type':'text/plain; charset=utf-8','X-Robots-Tag':'noindex, nofollow'}});
     const headers = {'Content-Type':file.mime, 'ETag':file.etag, 'Cache-Control':file.mime.startsWith('text/html') ? 'no-cache' : 'public, max-age=300', 'X-Content-Type-Options':'nosniff', 'Referrer-Policy':'strict-origin-when-cross-origin', 'X-Robots-Tag':'noindex, nofollow'};

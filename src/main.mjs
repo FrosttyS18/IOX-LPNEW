@@ -6,6 +6,7 @@ import {enhanceNavigation} from './navigation.mjs';
 import {enhanceReveals} from './reveal.mjs';
 import {enhanceCounters} from './counters.mjs';
 import {enhancePerformance} from './performance.mjs';
+import {thankYouPath} from './confirmation.mjs';
 
 enhanceEssentials(document.querySelector('.essentials-list'));
 
@@ -42,7 +43,6 @@ enhancePerformance(document.querySelector('.performance-chart'));
 
 const form = document.querySelector('#specialist-form');
 const submit = form.querySelector('button[type="submit"]');
-const formStatus = document.querySelector('#form-status');
 const phone = form.querySelector('input[type="tel"]');
 const customSelects = upgradeSelects(form);
 
@@ -55,9 +55,7 @@ form.addEventListener('submit', event => {
   event.preventDefault();
   if (!customSelects.reportValidity()) return;
   if (!form.reportValidity()) return;
-  formStatus.textContent = 'O envio ainda não está disponível nesta versão. Nenhum dado foi enviado.';
-  formStatus.hidden = false;
-  formStatus.focus({preventScroll: true});
+  window.location.assign(thankYouPath('a'));
 });
 
 submit.disabled = false;

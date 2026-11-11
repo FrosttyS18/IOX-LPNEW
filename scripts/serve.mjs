@@ -17,7 +17,7 @@ const server = createServer(async (request,response) => {
       path = local[pathname.slice('/__assets/'.length)];
       if (!path) {response.writeHead(404).end();return;}
     } else {
-      path = resolve(directory, '.' + (pathname === '/' ? '/index.html' : ['/lp-b','/lp-b/'].includes(pathname) ? '/lp-b/index.html' : pathname));
+      path = resolve(directory, '.' + (pathname === '/' ? '/index.html' : ['/lp-b','/lp-b/'].includes(pathname) ? '/lp-b/index.html' : ['/obrigado','/obrigado/'].includes(pathname) ? '/obrigado/index.html' : pathname));
       if (!path.startsWith(directory + sep)) {response.writeHead(403).end();return;}
     }
     const info = await stat(path);

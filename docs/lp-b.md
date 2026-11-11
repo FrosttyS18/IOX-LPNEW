@@ -23,7 +23,7 @@ Implementação solicitada pelo designer em 11/11/2026, a partir do frame vivo `
 
 O FAQ tem 18 px nas perguntas e 16 px nas respostas, começa com as sete perguntas fechadas, conforme pedido posterior do designer, e pode ser expandido por toque ou teclado. Setas para baixo giram para cima quando abertas. O menu mobile entra da direita. Dropdowns têm seta com recuo e foco visual por teclado. “Onde você já investe?” permite múltiplas opções, conforme o próprio placeholder do Figma.
 
-O formulário valida os campos, mas não envia dados nem integra CRM, e-mail ou WhatsApp. Essa é uma decisão explícita anterior do designer. O aviso de indisponibilidade só aparece após uma tentativa válida de envio. A URL da Política de Privacidade ainda não foi fornecida.
+O formulário valida os campos e, após preenchimento válido, abre a P3 compartilhada em `/obrigado/?origem=b`. O aviso provisório de indisponibilidade foi removido por pedido explícito do designer. Não envia dados nem integra CRM, e-mail ou WhatsApp nesta fase de validação. A origem permite apenas retornar para a LP correta; nenhum dado pessoal vai para URL ou armazenamento do navegador.
 
 O rodapé usa o texto legal integral fornecido pelo usuário em `src/legal.json`, fonte de 10 px e controle nativo Ver mais/Ver menos. Isso preserva a decisão posterior ao aviso abreviado do briefing. O primeiro parágrafo fica visível; os outros 13 ficam disponíveis ao expandir. Dados e períodos do conteúdo aprovado não são atualizados automaticamente.
 

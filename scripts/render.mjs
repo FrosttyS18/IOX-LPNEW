@@ -131,7 +131,7 @@ export function renderPage(source, assets, legal, approved) {
         <button class="button button-green submit-button" type="submit" disabled>${escape(form.cta)}</button>
         <p id="form-consent" class="form-consent">${desktopLines(form.consent)}</p>
         <p id="form-status" class="form-status" role="status" tabindex="-1" hidden></p>
-        <noscript><p class="form-status">Ative o JavaScript para usar a validação deste formulário. O envio ainda não está disponível.</p></noscript>
+        <noscript><p class="form-status">Ative o JavaScript para preencher e continuar com este formulário.</p></noscript>
       </form>
     </section>
   </main>

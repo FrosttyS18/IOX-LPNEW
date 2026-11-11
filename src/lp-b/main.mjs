@@ -1,4 +1,5 @@
 import {upgradeSelects} from '../select.mjs';
+import {thankYouPath} from '../confirmation.mjs';
 import {enhanceNavigation} from '../navigation.mjs';
 import {enhanceReveals} from '../reveal.mjs';
 import {enhancePerformance} from '../performance.mjs';
@@ -16,7 +17,6 @@ enhancePerformance(document.querySelector('.performance-chart'));
 const form = document.querySelector('#specialist-form');
 const selects = upgradeSelects(form);
 const phone = form.querySelector('input[type="tel"]');
-const status = document.querySelector('#form-status');
 const multiple = form.querySelector('.b-multiselect');
 const choices = [...multiple.querySelectorAll('input')];
 const multipleError = form.querySelector('.b-multi-error');
@@ -55,8 +55,6 @@ form.addEventListener('submit', event => {
   }
   if (!form.reportValidity()) return;
   multiple.open = false;
-  status.textContent = 'O envio ainda não está disponível nesta versão. Nenhum dado foi enviado.';
-  status.hidden = false;
-  status.focus({preventScroll:true});
+  window.location.assign(thankYouPath('b'));
 });
 form.querySelector('button[type="submit"]').disabled = false;

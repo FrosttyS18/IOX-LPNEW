@@ -1,0 +1,57 @@
+@font-face{font-family:'Plus Jakarta Sans';src:url('__FONT_REGULAR__') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Plus Jakarta Sans';src:url('__FONT_LIGHT__') format('truetype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Plus Jakarta Sans';src:url('__FONT_MEDIUM__') format('truetype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Plus Jakarta Sans';src:url('__FONT_SEMIBOLD__') format('truetype');font-weight:600;font-style:normal;font-display:swap}
+.confirmation-page{margin:0;background:#fff;color:#131514;font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.confirmation-page *{box-sizing:border-box}
+.confirmation-page a{color:inherit;text-decoration:none}
+.confirmation-page a:hover{text-decoration:underline;text-underline-offset:4px}
+.confirmation-page :focus-visible{outline:2px solid #177a48;outline-offset:5px}
+.confirmation-skip{position:fixed;left:24px;top:-100px;z-index:10;padding:12px 20px;background:#131514;color:#fff!important}
+.confirmation-skip:focus{top:12px}
+.confirmation-shell{display:grid;grid-template-columns:360px minmax(0,840px);column-gap:64px;width:100%;max-width:1440px;min-height:960px;margin-inline:auto;padding:40px 128px 40px 48px}
+.confirmation-context{position:relative;background:#000;border-radius:24px;min-height:880px;padding:32px;isolation:isolate}
+.confirmation-brand{display:block;width:44px;height:44px}
+.confirmation-brand img{display:block;width:100%;height:100%;object-fit:contain}
+.confirmation-context p{margin:120px 0 0;font-size:35px;line-height:1.35;letter-spacing:-.01em;color:#fff}
+.confirmation-glass{position:absolute;left:20px;bottom:80px;width:calc(100% - 40px);height:auto;aspect-ratio:1;object-fit:contain;z-index:-1}
+.confirmation-main{position:relative;padding-top:212px;min-width:0}
+.confirmation-return{position:absolute;right:0;top:22px;font-size:16px;line-height:1.35;color:#575c59!important}
+.confirmation-copy h1{margin:0;font-size:42px;font-weight:600;line-height:1.35;letter-spacing:-.005em}
+.confirmation-message{max-width:690px;margin:44px 0 0;font-size:20px;line-height:1.35;letter-spacing:-.005em;color:#575c59}
+.confirmation-message span{display:block}
+.confirmation-action{margin-top:91px}
+.confirmation-button{display:inline-flex;align-items:center;justify-content:center;width:274px;max-width:100%;min-height:56px;padding:14px 22px;border:0;border-radius:6px;background:#1f9d5c;color:#fff!important;font:400 18px/1.35 'Plus Jakarta Sans',sans-serif;text-align:center;text-decoration:none!important}
+.confirmation-button:disabled{opacity:1;cursor:default}
+.confirmation-factsheet{margin:60px 0 0;font-size:20px;line-height:1.35;letter-spacing:-.005em}
+.confirmation-factsheet-link{display:inline-block;margin-top:27px;font-size:16px;line-height:1.35;color:#167c48!important}
+.confirmation-mobile-brand{display:none}
+@media(max-width:1250px){
+  .confirmation-shell{grid-template-columns:280px minmax(0,1fr);column-gap:48px;padding:32px 48px;min-height:920px}
+  .confirmation-context{min-height:856px;padding:28px}
+  .confirmation-context p{font-size:30px}
+  .confirmation-main{padding-top:196px}
+  .confirmation-copy h1{font-size:36px;text-wrap:balance}
+  .confirmation-message span{display:inline}
+}
+@media(max-width:800px){
+  .confirmation-shell{display:block;position:relative;max-width:560px;min-height:852px;padding:24px 24px 80px}
+  .confirmation-context{display:none}
+  .confirmation-mobile-brand{display:block;width:48px;height:48px}
+  .confirmation-mobile-brand a{display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#090a0a;border-radius:10px}
+  .confirmation-mobile-brand img{width:32px;height:32px;object-fit:contain}
+  .confirmation-main{position:static;padding-top:116px}
+  .confirmation-return{right:56px;top:38px;font-size:14px;font-weight:300}
+  .confirmation-copy h1{font-size:25px;font-weight:500;line-height:1.35;letter-spacing:-.005em}
+  .confirmation-copy h1 span{display:block}
+  .confirmation-message{margin-top:42px;font-size:16px;line-height:1.35;letter-spacing:-.005em}
+  .confirmation-action{margin-top:110px}
+  .confirmation-button{width:100%;min-height:56px;font-size:18px}
+  .confirmation-factsheet{margin-top:48px;font-size:16px;line-height:1.35}
+  .confirmation-factsheet span{display:block}
+  .confirmation-factsheet-link{margin-top:36px;font-size:16px}
+}
+@media(max-width:360px){
+  .confirmation-return{right:24px}
+  .confirmation-action{margin-top:80px}
+}

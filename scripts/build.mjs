@@ -2,6 +2,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {renderPage} from './render.mjs';
 import {buildPageB} from './build-b.mjs';
+import {buildConfirmation} from './build-confirmation.mjs';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(await readFile(new URL('src/content.json', root), 'utf8'));
@@ -22,7 +23,7 @@ for (const key of required) {
 await mkdir(new URL('dist/', root), {recursive:true});
 const html = renderPage(source, assets, legal, approved);
 const css = await readFile(new URL('src/styles.css', root), 'utf8');
-const runtimeFiles = ['main.mjs','hero.mjs','select.mjs','essentials.mjs','navigation.mjs','reveal.mjs','counters.mjs','performance.mjs','performance-model.mjs','performance-data.mjs','performance.css'];
+const runtimeFiles = ['main.mjs','hero.mjs','select.mjs','essentials.mjs','navigation.mjs','reveal.mjs','counters.mjs','performance.mjs','performance-model.mjs','performance-data.mjs','performance.css','confirmation.mjs'];
 const runtime = new Map(await Promise.all(runtimeFiles.map(async file => [file, await readFile(new URL(`src/${file}`, root), 'utf8')])));
 const revision = createHash('sha256').update(html).update(css).update([...runtime.values()].join('\n')).digest('hex').slice(0,12);
 await writeFile(new URL('dist/index.html', root), html.replace(/((?:href|src)="\/)(styles\.css|performance\.css|main\.mjs)(")/g, `$1$2?v=${revision}$3`));
@@ -31,3 +32,4 @@ for (const [file, content] of runtime) await writeFile(new URL(`dist/${file}`, r
 await writeFile(new URL('dist/page-data.mjs', root), `export const heroVariants=${JSON.stringify(source.sections[0].copy.titleAndSubtitleVariants)};\nexport const assets=${JSON.stringify(assets)};\n`);
 console.log(`LP A built with ${local ? 'local preview' : 'CDN'} assets.`);
 await buildPageB(revision);
+await buildConfirmation();
