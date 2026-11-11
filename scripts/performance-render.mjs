@@ -3,10 +3,11 @@ import {normalizeSeries, renderPlot, formatReturn} from '../src/performance-mode
 
 const calendar = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M7 3v5m10-5v5M4 10h16" stroke="currentColor" stroke-width="1.4"/></svg>';
 
-export function renderPerformance() {
-  const result = normalizeSeries(performanceData);
+export function renderPerformance(accent) {
+  const data = accent ? {...performanceData, series:performanceData.series.map(series => series.id === 'iox' ? {...series, color:accent} : series)} : performanceData;
+  const result = normalizeSeries(data);
   const checks = (items, group) => items.map(([id, name]) => `<label><input type="checkbox" data-chart-series="${id}" data-control-group="${group}" checked disabled> ${name}</label>`).join('');
-  return `<figure class="performance-chart" aria-labelledby="performance-title">
+  return `<figure class="performance-chart"${accent ? ` data-chart-accent="${accent}"` : ''} aria-labelledby="performance-title">
     <header class="performance-heading"><h3 id="performance-title">Rentabilidade histórica</h3></header>
     <div class="performance-toolbar">
       <div class="performance-periods" role="group" aria-label="Período do gráfico">${['Ótimo','6M','1A','2A','3A','5A'].map(period => `<button type="button" data-chart-period="${period}" aria-pressed="${period === 'Ótimo'}" disabled>${period}</button>`).join('')}

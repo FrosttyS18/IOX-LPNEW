@@ -1,6 +1,7 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {renderPage} from './render.mjs';
+import {buildPageB} from './build-b.mjs';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(await readFile(new URL('src/content.json', root), 'utf8'));
@@ -29,3 +30,4 @@ await writeFile(new URL('dist/styles.css', root), css.replaceAll('__FONT_LIGHT__
 for (const [file, content] of runtime) await writeFile(new URL(`dist/${file}`, root), file.endsWith('.mjs') ? content.replace(/(from\s*|import\s*\()(['"])(\.\/[^'"]+\.mjs)\2/g, `$1$2$3?v=${revision}$2`) : content);
 await writeFile(new URL('dist/page-data.mjs', root), `export const heroVariants=${JSON.stringify(source.sections[0].copy.titleAndSubtitleVariants)};\nexport const assets=${JSON.stringify(assets)};\n`);
 console.log(`LP A built with ${local ? 'local preview' : 'CDN'} assets.`);
+await buildPageB(revision);

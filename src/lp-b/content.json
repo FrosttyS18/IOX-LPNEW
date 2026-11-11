@@ -1,0 +1,152 @@
+{
+  "figma": {
+    "file": "wRhCFXKO2CGyRhq5I3kHPK",
+    "frame": "126:4352",
+    "capturedAt": "2026-11-11"
+  },
+  "nav": [
+    "Quem é a IOX",
+    "O fundo",
+    "Perguntas frequentes"
+  ],
+  "hero": {
+    "title": "O grupo que você talvez\nainda não conheça.",
+    "body": "22 anos no mercado de crédito, R$ 3,8 bilhões de\npatrimônio líquido e um fundo para investidores\nqualificados que fechou no positivo todos os meses\ndesde agosto de 2023.",
+    "cta": "Conhecer o Fundo IOX 90."
+  },
+  "group": {
+    "title": "Quem é a IOX",
+    "body": "O Grupo IOX está há 22 anos no mercado de crédito e cresceu de forma\ndiscreta e consistente. Hoje o grupo soma R$ 3,8 bilhões de patrimônio\nlíquido. O Fundo IOX 90 é a forma de investidores qualificados\nparticiparem desse mercado.",
+    "years": "22 anos",
+    "yearsLabel": "no mercado de crédito",
+    "assets": "R$ 3,8 bilhões",
+    "assetsLabel": "de patrimônio líquido no Grupo IOX"
+  },
+  "fund": {
+    "title": "Onde o dinheiro trabalha",
+    "body": "O Fundo IOX 90 investe em fundos que antecipam recebíveis\nde empresas de indústria, comércio e serviço. São valores que\nessas empresas têm a receber de vendas já feitas, com prazos\ncurtos e uma carteira pulverizada entre quem vende e quem\npaga. A maior parte da carteira está em duplicatas.",
+    "fidcTitle": "FIDC em linguagem clara",
+    "fidcBody": "FIDC é um Fundo de Investimento em Direitos Creditórios. Na prática: uma empresa vende a prazo e precisa do dinheiro antes. O fundo antecipa esse valor e recebe quando o cliente  dela paga. O investidor participa desse ciclo."
+  },
+  "numbers": {
+    "title": "Os números",
+    "history": "Positivo em todos os meses\ndesde agosto de 2023",
+    "volatilityLabel": "Volatilidade\nanualizada de",
+    "volatility": "0,48%",
+    "fees": "Sem taxa\nde performance",
+    "note": "Dados da lâmina de setembro de 2026. Rentabilidade passada não é garantia de rentabilidade futura."
+  },
+  "liquidity": {
+    "title": "Para o patrimônio que não precisa estar disponível amanhã.",
+    "paragraphs": [
+      "Depois do pedido de resgate, o dinheiro cai na conta em 90 dias.",
+      "Por isso o Fundo IOX 90 é indicado para a parte do patrimônio que pode esperar, ao lado da sua reserva e dos seus outros investimentos."
+    ]
+  },
+  "audience": {
+    "title": "Para quem é",
+    "body": "Investidores qualificados, ou seja, pessoas com mais de R$ 1 milhão em aplicações\nfinanceiras, que já investem e querem diversificar com crédito."
+  },
+  "faq": {
+    "title": "Perguntas frequentes",
+    "items": [
+      {
+        "question": "Qual o valor mínimo?",
+        "answer": "Depois do primeiro aporte, você aporta o valor que quiser."
+      },
+      {
+        "question": "Tem garantia do FGC?",
+        "answer": "Não. O fundo não conta com garantia do gestor, do administrador, de seguro ou do FGC, e existe risco de perda."
+      },
+      {
+        "question": "Como funciona o resgate?",
+        "answer": "O pedido é feito até as 14h, e o valor é pago em 90 dias."
+      },
+      {
+        "question": "Quais são as taxas?",
+        "answer": "Uma taxa fixa de R$ 8 mil por mês, que já inclui administração e gestão. Não há taxa de performance."
+      },
+      {
+        "question": "Como é a tributação?",
+        "answer": "IR de 15% sobre o lucro, retido no resgate."
+      },
+      {
+        "question": "Quem cuida do fundo?",
+        "answer": "A gestão é da Tercon Asset, e a administração e a custódia são da QI Tech."
+      },
+      {
+        "question": "O que é investidor qualificado?",
+        "answer": "É quem tem mais de R$ 1 milhão em aplicações financeiras, conforme a regra da CVM."
+      }
+    ]
+  },
+  "contact": {
+    "title": "O próximo passo\né uma conversa.",
+    "fields": [
+      {
+        "order": 1,
+        "label": "Nome",
+        "options": [],
+        "id": "name"
+      },
+      {
+        "order": 2,
+        "label": "E-mail",
+        "options": [],
+        "id": "email"
+      },
+      {
+        "order": 3,
+        "label": "Celular (WhatsApp)",
+        "options": [],
+        "id": "phone"
+      },
+      {
+        "order": 4,
+        "label": "Quanto você tem investido hoje?",
+        "options": [
+          "Até R$ 300 mil",
+          "De R$ 300 mil a R$ 1 milhão",
+          "De R$ 1 milhão a R$ 5 milhões",
+          "Acima de R$ 5 milhões"
+        ],
+        "id": "invested"
+      },
+      {
+        "order": 5,
+        "label": "Onde você já investe?",
+        "options": [
+          "Renda Fixa",
+          "Renda Variável",
+          "Crédito Estruturado",
+          "Imóveis",
+          "Criptos",
+          "Ainda não invisto"
+        ],
+        "id": "investments"
+      },
+      {
+        "order": 6,
+        "label": "Pretende investir nos próximos 30 dias?",
+        "options": [
+          "Sim",
+          "Estou avaliando"
+        ],
+        "id": "next30"
+      },
+      {
+        "order": 7,
+        "label": "Qual o melhor horário para falarmos?",
+        "options": [
+          "Manhã",
+          "Tarde",
+          "Noite"
+        ],
+        "id": "time"
+      }
+    ],
+    "cta": "Quero minha conversa",
+    "consent": "Ao enviar, você concorda com a Política de Privacidade\ne em receber contato do Grupo IOX."
+  },
+  "footerFigma": "A rentabilidade obtida no passado não representa garantia de rentabilidade futura. O IOX 90 FICFIDC não conta com garantia do gestor da carteira, do\nadministrador, ou de qualquer outro mecanismo, inclusive de seguro de crédito ou, ainda, do fundo garantidor de créditos (FGC). Não há garantia\ncompleta contra a possibilidade de perdas para o fundo de investimento e para o investidor. É recomendada a leitura cuidadosa do prospecto e do\nregulamento do fundo antes de aplicar."
+}

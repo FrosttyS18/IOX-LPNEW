@@ -29,7 +29,8 @@ export function enhancePerformance(chart) {
     status.textContent = `Período de ${formatDate(result.start)} a ${formatDate(result.end)}. ${visible.size} séries visíveis.`;
   };
   const load = () => ready ||= import('./performance-data.mjs').then(module => {
-    data = module.performanceData;
+    const accent = chart.dataset.chartAccent;
+    data = accent ? {...module.performanceData, series:module.performanceData.series.map(series => series.id === 'iox' ? {...series, color:accent} : series)} : module.performanceData;
     start = data.start;
     end = data.end;
     result = normalizeSeries(data, start, end);

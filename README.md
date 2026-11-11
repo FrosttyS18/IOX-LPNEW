@@ -1,4 +1,4 @@
-# IOX — LP A
+# IOX — LP A e LP B
 
 Implementação da LP A a partir do layout atual do Figma, com HTML semântico, CSS responsivo e JavaScript nativo. As imagens e os quatro pesos da Plus Jakarta Sans são servidos pelo CDN R2 existente, com endereços centralizados em `src/assets.json`.
 
@@ -46,7 +46,7 @@ O primeiro parágrafo legal permanece visível; os demais ficam em um controle n
 
 O hero padrão usa no mobile a fotografia vertical fornecida pelo designer, com degradê preto aplicado em CSS e enquadramento próprio. O desktop e os cinco heroes de campanha mantêm suas fotografias. Os contadores mostram os valores finais no HTML e para leitores de tela; a animação visual ocorre uma vez quando cada número entra na área visível.
 
-A versão de revisão usa `noindex,nofollow`. A validação técnica não representa aprovação estética ou institucional. O arquivo do Figma e a LP B não são alterados por este projeto.
+A versão de revisão usa `noindex,nofollow`. A validação técnica não representa aprovação estética ou institucional. O arquivo do Figma não é alterado pela implementação.
 
 ## Revisão da nova copy — 10/11/2026
 
@@ -55,3 +55,7 @@ A implementação acompanha a cópia Figma `154:5845`, com o hero simplificado p
 O gráfico usa cotações públicas capturadas do Mais Retorno para o CNPJ 50.901.127/0001-50, CDI e Ibovespa. São 2450 cotações diárias no intervalo comum de 03/08/2023 a 09/11/2026, sem curvas inventadas nem suavização. Os filtros recalculam o retorno desde a primeira cotação comum do período selecionado. O histórico completo é renderizado no HTML; o arquivo de cotações para interação é carregado quando a seção se aproxima da tela. O tooltip acompanha o cursor e identifica as séries pelas mesmas cores das curvas. O arquivo `src/performance-data.mjs` preserva a fonte e a data de captura; não há atualização automática dos dados.
 
 Arquivos do gráfico: `src/performance-model.mjs`, `src/performance.mjs`, `src/performance.css` e `scripts/performance-render.mjs`. Imagens do novo mosaico permanecem no CDN. A nota dos resultados mantém outubro de 2026 conforme o ajuste manual do Figma; o gráfico mantém seu próprio período de consulta em novembro.
+
+## LP B — 11/11/2026
+
+A versão com monograma no hero e formulário no final é implementada em `/lp-b/`, sem substituir a A. O frame fonte é `126:4352`. A composição, os sete assets do Figma no CDN, os controles, as verificações e os limites de envio estão registrados em [docs/lp-b.md](docs/lp-b.md). O build gera as duas páginas e o pacote de publicação inclui ambas.
