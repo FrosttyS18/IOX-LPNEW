@@ -21,7 +21,7 @@ Implementação solicitada pelo designer em 11/11/2026, a partir do frame vivo `
 
 ## Interação e limites
 
-O FAQ tem 18 px nas perguntas e 16 px nas respostas, começa expandido conforme o Figma e pode ser recolhido por toque ou teclado. O menu mobile entra da direita. Dropdowns têm seta com recuo e foco visual por teclado. “Onde você já investe?” permite múltiplas opções, conforme o próprio placeholder do Figma.
+O FAQ tem 18 px nas perguntas e 16 px nas respostas, começa com as sete perguntas fechadas, conforme pedido posterior do designer, e pode ser expandido por toque ou teclado. Setas para baixo giram para cima quando abertas. O menu mobile entra da direita. Dropdowns têm seta com recuo e foco visual por teclado. “Onde você já investe?” permite múltiplas opções, conforme o próprio placeholder do Figma.
 
 O formulário valida os campos, mas não envia dados nem integra CRM, e-mail ou WhatsApp. Essa é uma decisão explícita anterior do designer. O aviso de indisponibilidade só aparece após uma tentativa válida de envio. A URL da Política de Privacidade ainda não foi fornecida.
 
@@ -36,3 +36,7 @@ As capturas são evidência técnica e visual de implementação, não aprovaç�
 ## Revisão de espaçamento — 11/11/2026
 
 Pedido do designer após revisar a página publicada: aumentar o respiro entre as seções. Cada transição passou a ter40px adicionais acima de800px e24px até800px, incluindo a entrada do rodapé. Os intervalos internos, dimensões dos cards, fontes, imagens e conteúdo foram preservados. Essa revisão explícita substitui apenas as coordenadas verticais do frame inicial; a composição interna continua a mesma. Conferência visual desktop/mobile e QA13larguras em work/lp-b-web-2026-11-11/qa-respiro-local.json.
+
+## FAQ recolhido — 11/11/2026
+
+Pedido posterior: todas as perguntas fechadas para reduzir rolagem e setas em lugar de+/−. Removida também a altura mínima fixa914px da seção; os intervalos externos aprovados permanecem. HTML nativo details/summary preserva teclado, toque e acesso às respostas sem JavaScript. A LP A e o Figma não foram alterados.

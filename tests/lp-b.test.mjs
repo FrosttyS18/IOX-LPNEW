@@ -11,7 +11,8 @@ test('LP B retains the current Figma copy, complete FAQ and field options',async
   const content=clean(html);
   const values=[...copy.nav,...Object.values(copy.hero),...Object.values(copy.group),...Object.values(copy.fund),...Object.values(copy.numbers),copy.liquidity.title,...copy.liquidity.paragraphs,...Object.values(copy.audience),copy.faq.title,...copy.faq.items.flatMap(i=>[i.question,i.answer]),copy.contact.title,copy.contact.cta,copy.contact.consent,...copy.contact.fields.flatMap(f=>[f.label,...f.options])];
   for(const value of values) assert.ok(content.includes(clean(value)),`Missing LP B text: ${value}`);
-  assert.equal((html.match(/class="b-faq-item" open/g)||[]).length,7);
+  assert.equal((html.match(/class="b-faq-item"/g)||[]).length,7);
+  assert.equal((html.match(/class="b-faq-item" open/g)||[]).length,0);
   assert.equal((html.match(/name="investments"/g)||[]).length,6);
   assert.equal((html.match(/<select /g)||[]).length,3);
   assert.equal((html.match(/<h1 /g)||[]).length,1);

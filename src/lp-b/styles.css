@@ -53,16 +53,15 @@
 .b-liquidity-copy p+p{margin-top:18px}
 .b-audience{margin-top:calc(80px + var(--b-section-extra));min-height:230px}
 .b-audience>p{max-width:952px;margin:30px auto 0;font-size:18px;line-height:1.51;color:var(--b-muted);text-align:center}
-.b-faq{margin-top:calc(60px + var(--b-section-extra));min-height:914px}
+.b-faq{margin-top:calc(60px + var(--b-section-extra))}
 .b-faq-list{margin-top:43px}
-.b-faq-item{min-height:94px;border-bottom:1px solid #141719;padding-bottom:23px;margin:0}
-.b-faq-item+details{padding-top:16px}
+.b-faq-item{border-bottom:1px solid #141719;padding:22px 0;margin:0}
+.b-faq-item+details{padding-top:22px}
 .b-faq-item:last-child{border-bottom:0}
 .b-faq-item summary{position:relative;min-height:25px;padding-right:44px;list-style:none;font-size:18px;font-weight:400;line-height:1.35;cursor:pointer;color:#f6f5f1}
 .b-faq-item summary::-webkit-details-marker{display:none}
-.b-faq-item summary span{position:absolute;right:16px;top:11px;width:12px;height:1px;background:currentColor}
-.b-faq-item summary span::after{content:"";position:absolute;inset:0;background:currentColor;transform:rotate(90deg)}
-.b-faq-item[open] summary span::after{transform:rotate(0deg)}
+.b-faq-item summary span{position:absolute;right:18px;top:7px;width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}
+.b-faq-item[open] summary span{top:11px;transform:rotate(225deg)}
 .b-faq-item p{margin-top:10px;font-size:16px;line-height:1.35;color:#b8bfbd;font-weight:300;max-width:1090px}
 .b-contact{display:grid;grid-template-columns:540fr 537fr;gap:87px;padding-right:36px;margin-top:calc(70px + var(--b-section-extra));align-items:start}
 .b-advisor{position:relative;isolation:isolate;height:600px;margin-top:4px;border-radius:16px;overflow:hidden;background:#151310}
