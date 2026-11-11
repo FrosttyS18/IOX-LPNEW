@@ -34,6 +34,19 @@ export function renderConfirmation(copy,assets){
     </div>
   </main>
 </div>
+<dialog class="agenda-dialog" aria-labelledby="agenda-title" aria-describedby="agenda-description">
+  <button class="agenda-close" type="button" data-agenda-close aria-label="Fechar agenda">×</button>
+  <p class="agenda-eyebrow">Agendar uma conversa</p>
+  <h2 id="agenda-title">Escolha o melhor horário.</h2>
+  <p id="agenda-description" class="agenda-description">Escolha um dia e horário para conversar com um especialista do Grupo IOX.</p>
+  <form class="agenda-form">
+    <fieldset><legend>Dia da conversa</legend><div class="agenda-days" data-agenda-days></div></fieldset>
+    <fieldset><legend>Horário</legend><div class="agenda-times" data-agenda-times></div></fieldset>
+    <p class="agenda-timezone">Horário de Brasília</p>
+    <button class="confirmation-button agenda-confirm" type="submit" data-agenda-confirm disabled>Selecionar horário</button>
+    <div class="agenda-status" data-agenda-status role="status" tabindex="-1" hidden><p>Horário selecionado</p><strong></strong></div>
+  </form>
+</dialog>
 <script type="module" src="/conversation/thanks.mjs"></script>
 </body></html>`;
 }

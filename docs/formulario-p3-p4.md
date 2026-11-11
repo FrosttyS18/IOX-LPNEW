@@ -8,7 +8,7 @@ O designer aprovou os layouts da seção Figma211:2, identidade da LP A, e depoi
 
 Fonte desktop211:231 e mobile211:243. HTML semântico em `/obrigado/`, com fontes e monograma do CDN existente. Os dois formulários validam normalmente e redirecionam para a mesma página, com `origem=a` ou `origem=b` para o retorno ao site. Não há POST, CRM, evento Meta, gravação de contato, dados pessoais em URL, storage ou logs. A confirmação é uma demonstração do fluxo aprovado, sem entrega real dos dados.
 
-O botão Escolher horário mantém a apresentação aprovada, mas está desabilitado até haver URL da agenda. P5 foi explicitamente excluída pelo designer. Não inventar destino, calendário ou responsável pelo lead.
+Pedido posterior do designer: simular a agenda para o botão ter ação. Escolher horário abre um diálogo na própria P3, com os próximos cinco dias úteis e sete horários, em Brasília. Seleção e resumo funcionam apenas na memória da visita, sem reserva, provedor externo ou nova P5. O designer explicitamente proibiu textos internos de demonstração na UI: a apresentação do Léo explica essa condição. A tela diz somente Horário selecionado, sem afirmar uma reserva confirmada. Escape, botão Fechar e clique fora retornam à P3 com foco no botão original.
 
 A lâmina acessível no site oficial é `https://grupoiox.com.br/wp-content/uploads/2025/12/IOX-90-Lamina-Agosto-2026.pdf`. É de agosto de2026, anterior aos números usados nas LPs. Não trocar os dados das LPs com base nesse documento. A substituição por uma lâmina mais recente depende do arquivo oficial correspondente.
 
@@ -21,3 +21,7 @@ Build e17testes passaram. Navegador real invisível:13larguras de320a1920px sem 
 ## P4 — próxima etapa
 
 Quatro telas: patrimônio investido, classes de investimento, intenção em30dias, identificação com nome/e-mail/WhatsApp/horário. Sem respostas selecionadas inicialmente, múltiplas classes e opção Ainda não invisto exclusiva. Respostas apenas na memória da visita, retorno sem perda durante o fluxo. Mesma P3 ao concluir. Sem ActiveCampaign, Meta, rastreamento de abandono ou agenda nesta fase. Não substituir os formulários embarcados nem escolher o teste por conta própria.
+
+## Agenda e altura da P3 — revisão posterior de11/11/2026
+
+A altura mínima fixa foi substituída por limite relativo à área disponível do navegador. QA9viewports, incluindo1920×1080/917/852 e1366×768, sem rolagem vertical indevida emdesktop. A agenda preserva rolagem própria quando necessária emcelulares.19testes eQA13larguras/4fluxosA-Bpassaram;rootconferiuagenda393eP31920×917. NenhumPOST/storage/reserva real.
