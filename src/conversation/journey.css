@@ -55,7 +55,8 @@
 .j-success path{stroke-dasharray:1;stroke-dashoffset:1;animation:j-check-draw .45s .18s ease-out forwards}
 .j-dialog[data-step="9"] .j-form{margin-top:124px}
 .j-dialog[data-step="exit"] .j-form{margin-top:156px}
-.j-dialog[data-step="9"] .j-body,.j-dialog[data-step="exit"] .j-body{margin-top:44px;max-width:740px}
+.j-dialog[data-step="9"] .j-body{margin-top:44px;max-width:621px}
+.j-dialog[data-step="exit"] .j-body{margin-top:44px;max-width:573px}
 .j-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;clip-path:inset(50%);white-space:nowrap;overflow:hidden}
 @media(min-width:481px) and (max-width:1250px){.j-line-break{display:none}}
 @keyframes j-check-in{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
