@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {validateJourney,nextJourney,previousJourney,readLead,journeyProgress} from '../src/conversation/journey-model.mjs';
+import {validateJourney,nextJourney,previousJourney,readLead,journeyProgress,journeyDisplayName} from '../src/conversation/journey-model.mjs';
 import {journeyView} from '../src/conversation/journey-view.mjs';
 
 test('qualificação, disponibilidade e conhecimento de FIDC controlam as três saídas',()=>{
@@ -41,7 +41,7 @@ test('contato é capturado de FormData sem confundir a seleção múltipla das L
 test('final personaliza com texto escapado e o mobile apresenta uma pergunta de perfil por vez',()=>{
   const lead={name:'<img src=x onerror=alert(1)>'};
   const final=journeyView({step:9},{},lead,true);
-  assert.ok(final.includes('Obrigado, &lt;img'));assert.ok(!final.includes('<img src=x'));
+  assert.ok(final.includes('j-person-name">&lt;img'));assert.ok(!final.includes('<img src=x'));
   assert.ok(final.includes('class="j-success"'));assert.ok(!final.includes('agenda'));
   const first=journeyView({step:4,profilePart:0},{},lead,true);
   const second=journeyView({step:4,profilePart:1},{},lead,true);
@@ -51,4 +51,14 @@ test('final personaliza com texto escapado e o mobile apresenta uma pergunta de 
   const fund=journeyView({step:6},{},lead,true);assert.ok(fund.includes('class="j-download"'));assert.ok(fund.includes('download>'));assert.ok(fund.includes('Ver o fundo no Mais Retorno'));
   const contribution=journeyView({step:3},{},lead,true);
   assert.ok(!contribution.includes('j-line-break'));assert.ok(contribution.includes('<span class="j-keep">IOX 90</span>'));assert.ok(contribution.includes('<span class="j-keep">R$ 25 mil</span>'));
+});
+
+test('agradecimento usa dois nomes só na apresentação e preserva o nome completo do contato',()=>{
+  assert.equal(journeyDisplayName('  Wesley   Lima de Oliveira '),'Wesley Lima');
+  assert.equal(journeyDisplayName('Maria Clara Silva'),'Maria Clara');
+  assert.equal(journeyDisplayName('João'),'João');
+  const lead={name:'Wesley Lima de Oliveira'};
+  const html=journeyView({step:9},{},lead,true);
+  assert.ok(html.includes('<span class="j-person-name">Wesley Lima.</span>'));
+  assert.ok(!html.includes('de Oliveira'));assert.equal(lead.name,'Wesley Lima de Oliveira');
 });

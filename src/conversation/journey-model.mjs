@@ -21,6 +21,10 @@ export function previousJourney(state,mobile){
   return {step:state.step-1,profilePart:state.step===5&&mobile?1:0};
 }
 export function journeyProgress(state){return state.step==='exit'?0:Math.round(state.step/9*100);}
+export function journeyDisplayName(fullName){
+  if(typeof fullName!=='string')throw new TypeError('Nome inválido.');
+  return fullName.trim().split(/\s+/).slice(0,2).join(' ');
+}
 export function readLead(data,source){
   if(source!=='a'&&source!=='b')throw new TypeError('Origem inválida.');
   const name=String(data.get('name')||'').trim(),email=String(data.get('email')||'').trim(),phone=String(data.get('phone')||'').trim();

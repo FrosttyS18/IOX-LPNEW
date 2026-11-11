@@ -39,11 +39,23 @@ export async function launchJourney(form,source){
   const main=dialog.querySelector('.j-main');
   const oldTitle=document.title;
   const oldOverflow=document.body.style.overflow;
+  let nameObserver;
+  function fitName(){
+    const name=main.querySelector('.j-person-name');
+    if(!name)return;
+    const title=name.parentElement,style=getComputedStyle(title),context=document.createElement('canvas').getContext('2d');
+    context.font=`${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+    const width=context.measureText(name.textContent).width;
+    const size=parseFloat(style.fontSize)*Math.min(1,(title.clientWidth-1)/width);
+    name.style.fontSize=`${size}px`;
+  }
   function render(focus=true,errors={}){
+    nameObserver?.disconnect();
     main.innerHTML=journeyView(state,answers,lead,mobile.matches,errors);
     dialog.dataset.step=String(state.step);
     document.title=`${state.step==='exit'?'Obrigado pelo interesse':state.step===9?'Obrigado':`Etapa ${state.step} de 9`} | IOX 90`;
     dialog.scrollTop=0;
+    if(state.step===9){fitName();nameObserver=new ResizeObserver(fitName);nameObserver.observe(main.querySelector('.j-title'));}
     if(focus)main.querySelector(Object.keys(errors).length?'[aria-invalid="true"] input':'.j-title')?.focus({preventScroll:true});
   }
   function close(){
@@ -51,6 +63,7 @@ export async function launchJourney(form,source){
     dialog.close();dialog.remove();activeDialog=undefined;
     document.body.style.overflow=oldOverflow;document.title=oldTitle;
     mobile.removeEventListener('change',onResize);
+    nameObserver?.disconnect();
     trigger.focus({preventScroll:true});
   }
   function onResize(){if(!mobile.matches)state.profilePart=0;render();}

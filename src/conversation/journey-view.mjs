@@ -1,5 +1,5 @@
 import {journeyCopy as copy,journeyTitles as titles,journeyOptions} from './journey-content.mjs';
-import {journeyProgress} from './journey-model.mjs';
+import {journeyProgress,journeyDisplayName} from './journey-model.mjs';
 import {journeyLines} from './journey-lines.mjs';
 
 export const escapeHtml=value=>String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
@@ -28,5 +28,6 @@ export function journeyView(state,answers,lead,mobile,errors={}){
   if(step===7)body=choices('moment','',answers,errors,mobile);
   if(step===8)body=choices('contact','',answers,errors,mobile);
   if(terminal)body=`<p class="j-body">${formatted(step===9?copy.final:copy.exit,mobile)}</p>`;
-  return `${step==='exit'?'':`<div class="j-progress"><div class="j-progress-label"><span>${label}</span><span>${percent}%</span></div><div class="j-progress-track" role="progressbar" aria-label="Progresso da jornada" aria-valuemin="0" aria-valuemax="9" aria-valuenow="${step}" aria-valuetext="${label}"><span style="width:${percent}%"></span></div></div>`}<form class="j-form" novalidate data-step="${step}" data-profile-part="${state.profilePart||0}"><div class="j-content"><div class="j-title-row">${step===9?checkIcon:''}<h1 class="j-title" id="j-title" tabindex="-1">${formatted(step===9?titles[9].replace('{nome}',lead.name):titles[step],mobile)}</h1></div>${body}</div>${terminal?'':`<footer class="j-actions">${step===1?'<span></span>':`<button class="j-back" type="button" data-back>${backIcon}<span>Voltar</span></button>`}<button type="submit" class="j-next">${step===1?'Quero ver se me enquadro':'Continuar'}</button></footer>`}</form>`;
+  const titleMarkup=step===9?`Obrigado, <span class="j-person-name">${escapeHtml(journeyDisplayName(lead.name))}.</span>`:formatted(titles[step],mobile);
+  return `${step==='exit'?'':`<div class="j-progress"><div class="j-progress-label"><span>${label}</span><span>${percent}%</span></div><div class="j-progress-track" role="progressbar" aria-label="Progresso da jornada" aria-valuemin="0" aria-valuemax="9" aria-valuenow="${step}" aria-valuetext="${label}"><span style="width:${percent}%"></span></div></div>`}<form class="j-form" novalidate data-step="${step}" data-profile-part="${state.profilePart||0}"><div class="j-content"><div class="j-title-row">${step===9?checkIcon:''}<h1 class="j-title" id="j-title" tabindex="-1">${titleMarkup}</h1></div>${body}</div>${terminal?'':`<footer class="j-actions">${step===1?'<span></span>':`<button class="j-back" type="button" data-back>${backIcon}<span>Voltar</span></button>`}<button type="submit" class="j-next">${step===1?'Quero ver se me enquadro':'Continuar'}</button></footer>`}</form>`;
 }
