@@ -16,6 +16,10 @@ Validação local: build e 27 testes passaram; 109 estados/caminhos em 12 largur
 
 A lâmina continua no único arquivo oficial disponível, agosto de 2026; substituir quando o cliente fornecer o arquivo atual. Meta, plugin Talk, ponte 3055 e prévia 4184 devem permanecer abertos. As seções seguintes registram o histórico anterior, não instruem a restaurar a agenda ou o formulário de quatro telas.
 
+**Publicado para revisão:** código `b05c492` (implementação em `0492668`), push confirmado no GitHub. Cloudflare Pages `d54fcdd2-97b3-4fd0-85c6-99cd27453fcd` em sucesso e canônico em 11/11/2026. QA pública: 23 estados/caminhos, A/B, saídas, toque, teclado/foco/retorno e URLs antigas; nove arquivos públicos byte-idênticos ao dist. `/conversation/agenda.mjs` responde 404. Refinamento final do texto de encerramento preserva largura621px no desktop conforme Figma. Evidências `qa-runtime-publico.json`, `qa-keyboard-publico.json`, `check-release.json` e `publico-final-1440.png` na pasta da jornada. Nenhum envio ou integração real foi ativado. O designer está testando; não concluir a meta nem fechar o plugin.
+
+**Regra esclarecida ao designer:** Não à pergunta “Você sabe o que é um FIDC?” (tela5) também leva à saída, mesmo após Sim nas telas2/3. Essa regra está expressa na copy fornecida pelo Léo; não foi inventada nem revista pelo assistente.
+
 ## Nova decisão do designer — Jornada IOX 90 | v2 — 11/11/2026
 
 **Substitui o planejamento anterior:** os formulários embarcados da **LP A e da LP B** vão abrir a mesma jornada após o envio. São nove telas e uma saída condicional. Nome e contato vêm da LP. A nova tela final substitui o encerramento com agenda. Não existem duas identidades ou um novo formulário de contato na última etapa.
