@@ -7,7 +7,7 @@
 
 **Auditoria de conteúdo:** 43 trechos e opções dos módulos atuais comparados à copy integral do Léo, sem divergências. Evidência: `work/jornada-iox90-v2-2026-11-11/auditoria-copy-codigo-atual.json`. O formulário e a jornada já estão publicados para revisão. Permanecem fora desta entrega as integrações de CRM/Meta/envio real, conforme instrução do designer; revisão humana continua pendente.
 
-**Publicação atual:** c8600016d025964e15b4bc78ca85c6b90e4b8416 no GitHub; Pages f1f582b8-32e3-4ba0-8159-eb3956abbb19, sucesso/canônico. Inclui rodapé fixo e painel proporcional de7ab79d6 e apresentação dos dois primeiros nomes. Arquivos públicos conferidos contra dist, agenda404. Registros abaixo de outras publicações são históricos.
+**Publicação atual:** ed88e8f1f4fcc78cf2be0cb32d8f35d778f9fc21 no GitHub; Pages 502a5a29-54e4-49a4-91d9-506f7adce648, sucesso/canônico. Inclui a compactação mobile e SVG preto descritos acima. Inclui rodapé fixo e painel proporcional de7ab79d6 e apresentação dos dois primeiros nomes. Arquivos públicos conferidos contra dist, agenda404. Registros abaixo de outras publicações são históricos.
 
 **Nome na apresentação final — pedido do designer em 11/11:** mostrar apenas os dois primeiros nomes, juntos na mesma linha, mesmo que o contato informe o nome completo. O nome original permanece integral em memória no formulário/lead para futura integração, sem truncar o dado. A apresentação escapa HTML e ajusta somente o tamanho do nome se necessário para caber. QA local: 20 combinações em 320/360/393/1440, incluindo nome longo, nome único e LP B; nomes unidos, sem overflow/erro JS e nome original preservado ao voltar. Renders 360/393 conferidos; 28 testes passaram.
 
