@@ -2,6 +2,8 @@
 
 ## Estado vigente — implementação autorizada em 11/11/2026
 
+**Auditoria de conteúdo:** 43 trechos e opções dos módulos atuais comparados à copy integral do Léo, sem divergências. Evidência: `work/jornada-iox90-v2-2026-11-11/auditoria-copy-codigo-atual.json`. O formulário e a jornada já estão publicados para revisão. Permanecem fora desta entrega as integrações de CRM/Meta/envio real, conforme instrução do designer; revisão humana continua pendente.
+
 **Publicação atual:** c8600016d025964e15b4bc78ca85c6b90e4b8416 no GitHub; Pages f1f582b8-32e3-4ba0-8159-eb3956abbb19, sucesso/canônico. Inclui rodapé fixo e painel proporcional de7ab79d6 e apresentação dos dois primeiros nomes. Arquivos públicos conferidos contra dist, agenda404. Registros abaixo de outras publicações são históricos.
 
 **Nome na apresentação final — pedido do designer em 11/11:** mostrar apenas os dois primeiros nomes, juntos na mesma linha, mesmo que o contato informe o nome completo. O nome original permanece integral em memória no formulário/lead para futura integração, sem truncar o dado. A apresentação escapa HTML e ajusta somente o tamanho do nome se necessário para caber. QA local: 20 combinações em 320/360/393/1440, incluindo nome longo, nome único e LP B; nomes unidos, sem overflow/erro JS e nome original preservado ao voltar. Renders 360/393 conferidos; 28 testes passaram.
@@ -30,7 +32,9 @@ A lâmina continua no único arquivo oficial disponível, agosto de 2026; substi
 
 **Conferência posterior de fidelidade — 11/11:** a auditoria das medidas encontrou opções 7/8 em duas colunas no desktop, divergindo do Figma (840px, empilhadas). Corrigidas no mesmo fluxo, junto dos intervalos verticais das opções 2–5/7/8 e do texto final. Quebras dos rótulos longos mobile 7/8 agora vêm das camadas nativas do Figma, sem alterar copy. O verificador reproduziu falha antes da correção (primeira opção mobile2 em293px em vez de310px) e passou depois:15grupos de opções + mensagens finais conferidos em393/1440. Build27testes e regressão57estados/caminhos em6larguras passaram; zeroerroJS/POST/overflow horizontal. Evidências `qa-fidelity.cjs`, `qa-fidelity.json`, `fidelity-*` e `qa-runtime.json`. Links reais da lâmina/PDF e MaisRetorno responderam200. São ajustes da implementação, sem mexer no Figma ou nas regras de qualificação.
 
-## Nova decisão do designer — Jornada IOX 90 | v2 — 11/11/2026
+## Histórico — definição e montagem da Jornada IOX 90 v2
+
+Os registros desta seção descrevem decisões antes da autorização de implementação. O estado vigente está no início do documento: jornada publicada nas LPs A/B. As referências abaixo a implementação futura ou site f09c03e são históricas e não representam pendências atuais.
 
 **Substitui o planejamento anterior:** os formulários embarcados da **LP A e da LP B** vão abrir a mesma jornada após o envio. São nove telas e uma saída condicional. Nome e contato vêm da LP. A nova tela final substitui o encerramento com agenda. Não existem duas identidades ou um novo formulário de contato na última etapa.
 
