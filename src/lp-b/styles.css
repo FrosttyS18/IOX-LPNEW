@@ -117,20 +117,32 @@
   .b-contact{padding-right:0;gap:88px}
   .b-advisor{height:660px}
 }
+@media(min-width:1251px) and (max-width:1399px){
+  .b-hero-glass{left:auto;right:40px;top:110px;width:460px;height:460px}
+  .b-hero-copy h1{font-size:46px}
+}
 @media(max-width:1250px){
   .b-shell,.b-footer.site-footer{width:calc(100% - 96px)}
-  .b-hero-copy{width:calc(60% - 32px);margin-left:40px;padding-top:164px}
-  .b-hero-copy h1{font-size:42px}
-  .b-hero-copy>p{width:100%;font-size:17px;margin-top:32px}
+  .b-hero{height:auto;min-height:780px;padding-bottom:330px}
+  .b-hero-copy{width:auto;margin:0;padding:134px 40px 0}
+  .b-hero-copy h1{font-size:38px;max-width:550px;text-wrap:balance}
+  .b-hero-copy>p{width:100%;max-width:570px;font-size:18px;margin-top:28px;line-height:1.5}
   .b-hero-copy .b-desktop-break{display:none}
   .b-hero-copy .b-desktop-break::after{content:" "}
-  .b-hero-glass{left:auto;right:30px;top:134px;width:420px;height:420px}
+  .b-hero-cta{margin-top:28px;min-height:54px;font-size:18px}
+  .b-hero-glass{left:auto;right:calc(50% - 155px);top:auto;bottom:20px;width:310px;height:310px}
   .b-hero-rim{width:180px;height:auto}
+  .b-liquidity{height:auto;padding-bottom:clamp(300px,calc((100vw - 128px)*.41146),470px);background:#100e0c}
+  .b-jet{top:auto;bottom:0;height:auto;object-fit:contain;object-position:right bottom;mask-image:linear-gradient(to bottom,transparent,#000 10%)}
+  .b-liquidity-copy{width:auto;padding:48px 40px 12px}
+  .b-liquidity-copy h2{font-size:38px;max-width:600px;text-wrap:balance}
+  .b-liquidity-copy p{font-size:18px;max-width:600px;margin-top:24px}
   .b-about-grid{grid-template-columns:1.4fr 1fr}
   .b-authority h3{font-size:48px}
   .b-authority-assets h3{font-size:36px}
   .b-authority article{padding:30px 24px}
   .b-fund{gap:32px;grid-template-columns:1fr 1.2fr}
+  .lp-b .performance-toolbar{flex-wrap:wrap}
   .b-fund-copy h2+p{width:auto}
   .b-fund-copy .b-desktop-break{display:none}
   .b-number-history h3{font-size:30px}
@@ -146,13 +158,12 @@
   .b-nav{display:none}
   .b-nav-cut{left:50%;transform:translateX(-50%);width:220px;height:54px;mask-image:var(--b-mobile-mask);mask-size:220px 50px}
   .b-hero-copy h1{font-size:38px}
-  .b-hero-glass{right:16px;width:360px;height:360px;top:160px}
   .b-hero-rim{width:150px}
   .b-number-grid{grid-template-columns:1.5fr 1fr 1fr;gap:16px}
   .b-number-grid article{padding:24px 20px}
   .b-number-volatility h3{font-size:42px}
   .b-number-volatility p{font-size:16px}
-  .b-liquidity-copy{width:49%;padding-left:40px;padding-top:54px}
+  .b-liquidity-copy{width:auto;padding-left:40px;padding-top:48px}
   .b-liquidity-copy h2{font-size:38px}
   .b-liquidity-copy p{font-size:18px}
   .b-advisor{height:530px}
