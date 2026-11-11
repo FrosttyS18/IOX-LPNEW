@@ -20,6 +20,8 @@ A lâmina continua no único arquivo oficial disponível, agosto de 2026; substi
 
 **Regra esclarecida ao designer:** Não à pergunta “Você sabe o que é um FIDC?” (tela5) também leva à saída, mesmo após Sim nas telas2/3. Essa regra está expressa na copy fornecida pelo Léo; não foi inventada nem revista pelo assistente.
 
+**Conferência posterior de fidelidade — 11/11:** a auditoria das medidas encontrou opções 7/8 em duas colunas no desktop, divergindo do Figma (840px, empilhadas). Corrigidas no mesmo fluxo, junto dos intervalos verticais das opções 2–5/7/8 e do texto final. Quebras dos rótulos longos mobile 7/8 agora vêm das camadas nativas do Figma, sem alterar copy. O verificador reproduziu falha antes da correção (primeira opção mobile2 em293px em vez de310px) e passou depois:15grupos de opções + mensagens finais conferidos em393/1440. Build27testes e regressão57estados/caminhos em6larguras passaram; zeroerroJS/POST/overflow horizontal. Evidências `qa-fidelity.cjs`, `qa-fidelity.json`, `fidelity-*` e `qa-runtime.json`. Links reais da lâmina/PDF e MaisRetorno responderam200. São ajustes da implementação, sem mexer no Figma ou nas regras de qualificação.
+
 ## Nova decisão do designer — Jornada IOX 90 | v2 — 11/11/2026
 
 **Substitui o planejamento anterior:** os formulários embarcados da **LP A e da LP B** vão abrir a mesma jornada após o envio. São nove telas e uma saída condicional. Nome e contato vêm da LP. A nova tela final substitui o encerramento com agenda. Não existem duas identidades ou um novo formulário de contato na última etapa.
