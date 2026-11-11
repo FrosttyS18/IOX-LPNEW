@@ -36,6 +36,7 @@ export function renderConfirmation(copy,assets){
 </div>
 <dialog class="agenda-dialog" aria-labelledby="agenda-title" aria-describedby="agenda-description">
   <button class="agenda-close" type="button" data-agenda-close aria-label="Fechar agenda">×</button>
+  <div class="agenda-selection">
   <p class="agenda-eyebrow">Agendar uma conversa</p>
   <h2 id="agenda-title">Escolha o melhor horário.</h2>
   <p id="agenda-description" class="agenda-description">Escolha um dia e horário para conversar com um especialista do Grupo IOX.</p>
@@ -44,8 +45,14 @@ export function renderConfirmation(copy,assets){
     <fieldset><legend>Horário</legend><div class="agenda-times" data-agenda-times></div></fieldset>
     <p class="agenda-timezone">Horário de Brasília</p>
     <button class="confirmation-button agenda-confirm" type="submit" data-agenda-confirm disabled>Selecionar horário</button>
-    <div class="agenda-status" data-agenda-status role="status" tabindex="-1" hidden><p>Horário selecionado</p><strong></strong></div>
   </form>
+  </div>
+  <section class="agenda-success" hidden aria-labelledby="agenda-success-title">
+    <svg class="agenda-success-icon" viewBox="0 0 80 80" width="80" height="80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="#e8f4ed"/><path d="m23 41 11 11 23-25" fill="none" stroke="#1f9d5c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h2 id="agenda-success-title" tabindex="-1">Obrigado!</h2>
+    <p id="agenda-success-copy">Seu agendamento ficou marcado para<br><strong data-agenda-selected></strong></p>
+    <button class="confirmation-button" type="button" data-agenda-done>Concluir</button>
+  </section>
 </dialog>
 <script type="module" src="/conversation/thanks.mjs"></script>
 </body></html>`;

@@ -22,6 +22,7 @@ test('confirmation does not invent an agenda destination or a P5',()=>{
   assert.ok(!html.includes('href="/agenda'));
   assert.ok(html.includes('rel="noopener noreferrer"'));
   assert.ok(html.includes('class="agenda-dialog"'));
-  assert.ok(html.includes('Horário selecionado'));
+  assert.ok(html.includes('Obrigado!'));
+  assert.ok(html.includes('Seu agendamento ficou marcado para'));
   assert.doesNotMatch(normalized,/demonstração|demonstrativ|simulação|Nenhum horário foi reservado/i);
 });

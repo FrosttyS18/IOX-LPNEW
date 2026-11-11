@@ -53,9 +53,19 @@
 .agenda-timezone{margin:0 0 24px;color:#575c59;font-size:13px;line-height:1.35}
 .agenda-confirm{width:100%;cursor:pointer}
 .agenda-confirm:disabled{opacity:.45;cursor:default}
-.agenda-status{margin-top:24px;padding-top:20px;border-top:1px solid #e0e4e1;font-size:15px;line-height:1.5}
-.agenda-status p{margin:0 0 8px;color:#575c59}
-.agenda-status strong{display:block;font-weight:500;color:#167c48}
+.agenda-dialog [hidden]{display:none}
+.agenda-dialog.is-confirmed{max-width:520px}
+.agenda-success{display:flex;flex-direction:column;align-items:center;padding:16px 0 4px;text-align:center}
+.agenda-success-icon{margin-bottom:24px;animation:agenda-check-enter .35s ease-out both}
+.agenda-success-icon path{stroke-dasharray:52;stroke-dashoffset:52;animation:agenda-check-draw .45s .15s ease-out forwards}
+.agenda-success h2{font-size:32px;font-weight:500;line-height:1.35}
+.agenda-success h2:focus{outline:none}
+.agenda-success p{margin:20px 0 32px;font-size:17px;line-height:1.5;color:#575c59;text-wrap:balance}
+.agenda-success strong{display:inline-block;margin-top:12px;color:#167c48;font-size:20px;font-weight:500}
+.agenda-success .confirmation-button{cursor:pointer}
+@keyframes agenda-check-enter{from{opacity:0;transform:scale(.75)}to{opacity:1;transform:scale(1)}}
+@keyframes agenda-check-draw{to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:reduce){.agenda-success-icon,.agenda-success-icon path{animation:none}.agenda-success-icon path{stroke-dashoffset:0}}
 @media(max-width:480px){.agenda-dialog{padding:36px 22px 28px}.agenda-dialog h2{font-size:24px}.agenda-times{grid-template-columns:repeat(3,minmax(0,1fr))}.agenda-day strong{font-size:15px}.agenda-day{font-size:12px}}
 @media(max-width:800px){
   .confirmation-shell{display:block;position:relative;max-width:560px;min-height:852px;padding:24px 24px 80px}

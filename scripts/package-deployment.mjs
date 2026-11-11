@@ -6,6 +6,7 @@ const files = ['index.html', 'styles.css', 'main.mjs', 'hero.mjs', 'page-data.mj
 files.push('lp-b/index.html','lp-b/styles.css','lp-b/main.mjs');
 files.push('confirmation.mjs','obrigado/index.html','conversation/styles.css','conversation/thanks.mjs');
 files.push('conversation/agenda.mjs','conversation/agenda-model.mjs');
+files.push('conversa/index.html','conversation/quiz.css','conversation/quiz.mjs','conversation/model.mjs','conversation/content.mjs');
 const mime = {html:'text/html; charset=utf-8', css:'text/css; charset=utf-8', mjs:'text/javascript; charset=utf-8', txt:'text/plain; charset=utf-8'};
 const manifest = {};
 const uploads = {};

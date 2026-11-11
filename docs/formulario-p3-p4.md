@@ -12,16 +12,22 @@ Pedido posterior do designer: simular a agenda para o botão ter ação. Escolhe
 
 A lâmina acessível no site oficial é `https://grupoiox.com.br/wp-content/uploads/2025/12/IOX-90-Lamina-Agosto-2026.pdf`. É de agosto de2026, anterior aos números usados nas LPs. Não trocar os dados das LPs com base nesse documento. A substituição por uma lâmina mais recente depende do arquivo oficial correspondente.
 
-Código: `src/confirmation.mjs`, `src/conversation/thanks.mjs`, `src/conversation/styles.css`, `src/conversation/content.mjs`, `scripts/render-confirmation.mjs`, `scripts/build-confirmation.mjs`. Modelo e testes da P4 preparados, ainda sem tela funcional nesta entrega.
+Código da P3: `src/confirmation.mjs`, `src/conversation/thanks.mjs`, `src/conversation/styles.css`, `src/conversation/content.mjs`, `scripts/render-confirmation.mjs`, `scripts/build-confirmation.mjs`. A agenda usa `agenda.mjs` e `agenda-model.mjs` no mesmo diretório.
 
 ## Validação da P3
 
 Build e17testes passaram. Navegador real invisível:13larguras de320a1920px sem overflow ou texto cortado, fontes/imagens carregadas. Fluxos A e B conferidos em393e1440px: preenchimento inválido permanece no formulário; válido chega à P3; retorno identifica a LP; nenhum POST ou armazenamento. Root conferiu as capturas393e1440contra o layout aprovado. Regressão da B em13larguras e da A em7larguras, com gráfico, toque, menu, FAQ e controles preservados. Evidências em `C:/iox/work/formulario-p3-p4-2026-11-11/`.
 
-## P4 — próxima etapa
+## P4 — formulário em etapas implementado
 
-Quatro telas: patrimônio investido, classes de investimento, intenção em30dias, identificação com nome/e-mail/WhatsApp/horário. Sem respostas selecionadas inicialmente, múltiplas classes e opção Ainda não invisto exclusiva. Respostas apenas na memória da visita, retorno sem perda durante o fluxo. Mesma P3 ao concluir. Sem ActiveCampaign, Meta, rastreamento de abandono ou agenda nesta fase. Não substituir os formulários embarcados nem escolher o teste por conta própria.
+Rota `/conversa/`, ou `/conversa/?origem=b` para retornar à B. Quatro telas: patrimônio investido, classes de investimento, intenção em30dias, identificação com nome/e-mail/WhatsApp/horário. Sem respostas selecionadas inicialmente, múltiplas classes e opção Ainda não invisto exclusiva. Respostas apenas na memória da visita, retorno sem perda durante o fluxo. Mesma P3 ao concluir. Sem ActiveCampaign, Meta ou rastreamento de abandono nesta fase. Os formulários embarcados A/B permanecem como estavam, apenas com retorno para P3; nenhuma distribuição de experimento foi criada.
+
+Código da P4: `scripts/render-quiz.mjs`, `scripts/build-quiz.mjs`, `src/conversation/quiz.css`, `src/conversation/quiz.mjs` e `model.mjs`. Sem bibliotecas adicionais. Fieldsets, labels, controles nativos de radio/checkbox, erros associados, foco de teclado e título da etapa atual. Progresso25/50/75/100. Consentimento e link oficial da Política de Privacidade preservados. Enter continua o fluxo e o botão Voltar mantém respostas.
+
+QA local:52combinações(13larguras×4etapas), sem overflow/corte/erroJS; fluxos completos A1440/B393 com validação, seleção múltipla, Ainda não invisto exclusivo e retorno sem perda. Nenhum POST/storage. Root comparou as8telas desktop/mobile às fontes211:3/30/54/90/123/145/164/199, refinando quebras e posições. Build20testes PASS.
 
 ## Agenda e altura da P3 — revisão posterior de11/11/2026
 
 A altura mínima fixa foi substituída por limite relativo à área disponível do navegador. QA9viewports, incluindo1920×1080/917/852 e1366×768, sem rolagem vertical indevida emdesktop. A agenda preserva rolagem própria quando necessária emcelulares.19testes eQA13larguras/4fluxosA-Bpassaram;rootconferiuagenda393eP31920×917. NenhumPOST/storage/reserva real.
+
+Pedido posterior: o calendário desaparece após confirmar e o mesmo diálogo passa ao estado de sucesso, com check animado, Obrigado! e Seu agendamento ficou marcado para [data/hora escolhidas]. Essa copy foi solicitada explicitamente para a apresentação simulada. A reserva continua sem integração real. A animação respeita prefers-reduced-motion; Concluir/Fechar/Escape fecham e restauram o foco. Reabrir mostra a seleção, mantendo o horário anterior na memória da visita. Nenhum texto interno de demonstração na UI.

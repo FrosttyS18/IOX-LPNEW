@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import {renderPage} from './render.mjs';
 import {buildPageB} from './build-b.mjs';
 import {buildConfirmation} from './build-confirmation.mjs';
+import {buildQuiz} from './build-quiz.mjs';
 
 const root = new URL('../', import.meta.url);
 const source = JSON.parse(await readFile(new URL('src/content.json', root), 'utf8'));
@@ -33,3 +34,4 @@ await writeFile(new URL('dist/page-data.mjs', root), `export const heroVariants=
 console.log(`LP A built with ${local ? 'local preview' : 'CDN'} assets.`);
 await buildPageB(revision);
 await buildConfirmation();
+await buildQuiz();

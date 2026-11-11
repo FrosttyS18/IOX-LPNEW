@@ -8,7 +8,8 @@ export function enhanceDemoAgenda(){
   const days=demoDays();
   const dayList=dialog.querySelector('[data-agenda-days]');
   const timeList=dialog.querySelector('[data-agenda-times]');
-  const status=dialog.querySelector('[data-agenda-status]');
+  const selectionView=dialog.querySelector('.agenda-selection');
+  const successView=dialog.querySelector('.agenda-success');
   const submit=dialog.querySelector('[data-agenda-confirm]');
   for(const day of days){
     const label=document.createElement('label');
@@ -24,11 +25,15 @@ export function enhanceDemoAgenda(){
     const text=document.createElement('span');text.textContent=time;label.append(input,text);timeList.append(label);
   }
   trigger.disabled=false;
-  trigger.addEventListener('click',()=>dialog.showModal());
+  trigger.addEventListener('click',()=>{
+    selectionView.hidden=false;successView.hidden=true;dialog.classList.remove('is-confirmed');
+    dialog.setAttribute('aria-labelledby','agenda-title');dialog.setAttribute('aria-describedby','agenda-description');
+    dialog.showModal();
+  });
   dialog.querySelector('[data-agenda-close]').addEventListener('click',()=>dialog.close());
+  dialog.querySelector('[data-agenda-done]').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)dialog.close();}});
   form.addEventListener('change',()=>{
-    status.hidden=true;
     submit.disabled=!form.querySelector('input[name="agenda-day"]:checked')||!form.querySelector('input[name="agenda-time"]:checked');
   });
   form.addEventListener('submit',event=>{
@@ -37,8 +42,9 @@ export function enhanceDemoAgenda(){
     const time=form.querySelector('input[name="agenda-time"]:checked')?.value;
     if(!day||!time)return;
     const selection=selectionLabel(days,day,time);
-    status.querySelector('strong').textContent=selection;
-    status.hidden=false;
-    status.focus();
+    dialog.querySelector('[data-agenda-selected]').textContent=selection;
+    selectionView.hidden=true;successView.hidden=false;dialog.classList.add('is-confirmed');
+    dialog.setAttribute('aria-labelledby','agenda-success-title');dialog.setAttribute('aria-describedby','agenda-success-copy');
+    dialog.querySelector('#agenda-success-title').focus({preventScroll:true});
   });
 }
